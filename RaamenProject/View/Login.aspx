@@ -9,7 +9,6 @@
 <body>
     <form id="form1" runat="server">
         <h1>Login Page</h1>
-        <h1>Testing</h1>
             <div>
                 <asp:Label ID="Label1" runat="server" Text="Username"></asp:Label><br />
                 <asp:TextBox ID="usernameTxt" runat="server"></asp:TextBox><br />
@@ -23,7 +22,10 @@
          <asp:Label ID="statusLbl" runat="server" Text=""></asp:Label><br />
          <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" /><br />
 
+        <asp:Label ID="infoLbl" runat="server" Text=""></asp:Label><br /><br />
 
+        <h4>Don't have account? Register Here!</h4>
+        <asp:Button ID="registerBtn" runat="server" Text="Register" OnClick="registerBtn_Click" />
     </form>
 </body>
 </html>

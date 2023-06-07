@@ -36,5 +36,10 @@ namespace RaamenProject.Handler
         {
             UserRepository.deleteUser(id);
         }
+
+        public static User getUser(String Username, String Password)
+        {
+            return UserRepository.getUser(Username, Password);
+        }
     }
 }

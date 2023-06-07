@@ -40,7 +40,9 @@
             <asp:Label ID="statusLbl" runat="server" Text=""></asp:Label><br />
 
             <asp:Button ID="registerBtn" runat="server" Text="Register" OnClick="registerBtn_Click" /><br />
-
+            
+            <h4>Already have account? Login Here!</h4>
+            <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" />
     </form>
 </body>
 </html>

@@ -44,5 +44,12 @@ namespace RaamenProject.Repository
             db.Users.Remove(user);
             db.SaveChanges();
         }
+
+        public static User getUser(String Username, String Password)
+        {
+            User user = (from data in db.Users where data.Username.Equals(Username) && data.Password.Equals(Password) select data).FirstOrDefault();
+
+            return user;
+        }
     }
 }

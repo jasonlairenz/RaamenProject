@@ -46,8 +46,30 @@ namespace RaamenProject.Controller
                 UserHandler.addUser(Username, Email, Gender, Password);
                 return "Successfully";
             }
-            
+        }
 
+        public static string login(String Username, String Password)
+        {
+
+            if (Username.Equals(""))
+            {
+                return "Name must be filled";
+            }
+            else if (Password.Equals(""))
+            {
+                return "Password must be filled";
+            }
+            else
+            {
+                User user = getUser(Username, Password);
+
+                if (user == null){
+                    return "No Account";
+                }
+                else{
+                    return "Success";
+                }
+            }
         }
 
         public static List<User> viewUser()
@@ -68,6 +90,11 @@ namespace RaamenProject.Controller
         public static void deleteUser(int id)
         {
             UserHandler.deleteUser(id);
+        }
+
+        public static User getUser(String Username, String Password)
+        {
+            return UserHandler.getUser(Username, Password);
         }
     }
 }

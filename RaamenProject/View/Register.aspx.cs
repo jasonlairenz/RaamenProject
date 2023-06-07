@@ -27,6 +27,10 @@ namespace RaamenProject.View
             statusLbl.Text = UserController.addUser(Username, Email, Gender, Password, Confirm);
            
         }
-        
+
+        protected void loginBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Login.aspx");
+        }
     }
 }
