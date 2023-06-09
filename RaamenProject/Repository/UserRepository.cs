@@ -23,6 +23,32 @@ namespace RaamenProject.Repository
             return db.Users.ToList<User>();
         }
 
+        public static List<User> viewMember()
+        {
+            User user = db.Users.FirstOrDefault(data => data.Roleid == 1);
+            List<User> userList = new List<User>();
+
+            if (user != null)
+            {
+                userList.Add(user);
+            }
+
+            return userList;
+        }
+
+        public static List<User> viewStaff()
+        {
+            User user = db.Users.FirstOrDefault(data => data.Roleid == 3);
+            List<User> userList = new List<User>();
+
+            if (user != null)
+            {
+                userList.Add(user);
+            }
+
+            return userList;
+        }
+
         public static User viewUserById(int id)
         {
             return db.Users.Find(id);
@@ -50,6 +76,12 @@ namespace RaamenProject.Repository
             User user = (from data in db.Users where data.Username.Equals(Username) && data.Password.Equals(Password) select data).FirstOrDefault();
 
             return user;
+        }
+
+        public static int findUsername(string Username)
+        {
+            int findUsername = (from data in db.Users where data.Username.Equals(Username) select data.id).FirstOrDefault();
+            return findUsername;
         }
     }
 }

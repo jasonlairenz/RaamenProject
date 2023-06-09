@@ -22,6 +22,16 @@ namespace RaamenProject.Handler
             return UserRepository.viewUser();
         }
 
+        public static List<User> viewMember()
+        {
+            return UserRepository.viewMember();
+        }
+
+        public static List<User> viewStaff()
+        {
+            return UserRepository.viewStaff();
+        }
+
         public static User viewUserById(int id)
         {
             return UserRepository.viewUserById(id);
@@ -40,6 +50,11 @@ namespace RaamenProject.Handler
         public static User getUser(String Username, String Password)
         {
             return UserRepository.getUser(Username, Password);
+        }
+
+        public static int findUsername(String Username)
+        {
+            return UserRepository.findUsername(Username);
         }
     }
 }

@@ -25,7 +25,8 @@ namespace RaamenProject.View
 
             if (statusLbl.Text.Equals("Success"))
             {
-                Response.Redirect("~/View/Dashboard.aspx");
+                int Id = UserController.findUsername(Username);
+                Response.Redirect("~/View/Home.aspx?UserId=" + Id);
             }
         }
 

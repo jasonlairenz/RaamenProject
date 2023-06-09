@@ -77,6 +77,16 @@ namespace RaamenProject.Controller
             return UserHandler.viewUser();
         }
 
+        public static List<User> viewMember()
+        {
+            return UserHandler.viewMember();
+        }
+
+        public static List<User> viewStaff()
+        {
+            return UserHandler.viewStaff();
+        }
+
         public static User viewUserById(int id)
         {
             return UserHandler.viewUserById(id);
@@ -95,6 +105,11 @@ namespace RaamenProject.Controller
         public static User getUser(String Username, String Password)
         {
             return UserHandler.getUser(Username, Password);
+        }
+
+        public static int findUsername(String Username)
+        {
+            return UserHandler.findUsername(Username);
         }
     }
 }
