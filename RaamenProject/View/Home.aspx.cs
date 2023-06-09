@@ -12,7 +12,7 @@ namespace RaamenProject.View
 {
     public partial class Home : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
@@ -75,8 +75,8 @@ namespace RaamenProject.View
 
         protected void profileBtn_Click(object sender, EventArgs e)
         {
-            //int id = UserController.findUsername(Username);
-            //Response.Redirect("~/View/Profile.aspx?UserId = " + id);
+            int id = int.Parse(Request.QueryString["UserId"]);
+            Response.Redirect("~/View/Profile/ViewProfile.aspx?UserId="+id);
         }
     }
 }
