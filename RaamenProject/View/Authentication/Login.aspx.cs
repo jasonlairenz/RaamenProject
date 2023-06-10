@@ -32,7 +32,7 @@ namespace RaamenProject.View
 
         protected void registerBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Register.aspx");
+            Response.Redirect("~/View/Authentication/Register.aspx");
         }
     }
 }

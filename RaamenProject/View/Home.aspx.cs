@@ -70,7 +70,7 @@ namespace RaamenProject.View
             kuki.Expires = DateTime.Now.AddDays(-1);
             Response.Cookies.Add(kuki);
 
-            Response.Redirect("~/View/Login.aspx");
+            Response.Redirect("~/View/Authentication/Login.aspx");
         }
 
         protected void profileBtn_Click(object sender, EventArgs e)

@@ -13,17 +13,21 @@ namespace RaamenProject.View.Profile
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id = int.Parse(Request.QueryString["UserId"]);
-            User u = UserController.viewUserById(id);
-            usernameLbl.Text = u.Username;
-            emailLbl.Text = u.Email;
-            genderLbl.Text = u.Gender;
-            passLbl.Text = u.Password;
+            if (!Page.IsPostBack)
+            {
+                int id = int.Parse(Request.QueryString["UserId"]);
+                User u = UserController.viewUserById(id);
+                usernameLbl.Text = u.Username;
+                emailLbl.Text = u.Email;
+                genderLbl.Text = u.Gender;
+                passLbl.Text = u.Password;
+            }
         }
 
         protected void updateBtn_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("~/View/Profile/Update.aspx?UserId=" + id);
+            int id = int.Parse(Request.QueryString["UserId"]);
+            Response.Redirect("~/View/Profile/UpdateProfile.aspx?UserId="+id);
         }
     }
 }

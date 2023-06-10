@@ -90,10 +90,10 @@
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <Content Include="View\addRamen.aspx" />
-    <Content Include="View\Login.aspx" />
+    <Content Include="View\Authentication\Login.aspx" />
     <Content Include="View\Profile\UpdateProfile.aspx" />
     <Content Include="View\Profile\ViewProfile.aspx" />
-    <Content Include="View\Register.aspx" />
+    <Content Include="View\Authentication\Register.aspx" />
     <Content Include="View\Home.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -147,11 +147,11 @@
     <Compile Include="View\addRamen.aspx.designer.cs">
       <DependentUpon>addRamen.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Login.aspx.cs">
+    <Compile Include="View\Authentication\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Login.aspx.designer.cs">
+    <Compile Include="View\Authentication\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Profile\UpdateProfile.aspx.cs">
@@ -168,11 +168,11 @@
     <Compile Include="View\Profile\ViewProfile.aspx.designer.cs">
       <DependentUpon>ViewProfile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Register.aspx.cs">
+    <Compile Include="View\Authentication\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Register.aspx.designer.cs">
+    <Compile Include="View\Authentication\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Home.aspx.cs">

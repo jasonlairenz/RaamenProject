@@ -25,12 +25,18 @@ namespace RaamenProject.View
             String Confirm = confirmTxt.Text;
 
             statusLbl.Text = UserController.addUser(Username, Email, Gender, Password, Confirm);
-           
+
+            if (statusLbl.Text.Equals("Success"))
+            {
+                int Id = UserController.findUsername(Username);
+                Response.Redirect("~/View/Home.aspx?UserId=" + Id);
+            }
+
         }
 
         protected void loginBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Login.aspx");
+            Response.Redirect("~/View/Authentication/Login.aspx");
         }
     }
 }

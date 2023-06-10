@@ -10,6 +10,7 @@
     <form id="form1" runat="server">
         <div>
             <h1>View Profile</h1>
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label> <br />
             <asp:Label ID="usernameLbl" runat="server" Text=""></asp:Label> <br />
             <asp:Label ID="emailLbl" runat="server" Text=""></asp:Label><br />
             <asp:Label ID="genderLbl" runat="server" Text=""></asp:Label><br />
