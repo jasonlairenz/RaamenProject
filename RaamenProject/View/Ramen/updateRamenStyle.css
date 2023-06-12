@@ -15,29 +15,27 @@ body {
     margin: 0;
 }
 
-h1, p {
+h1 {
     color: cornflowerblue;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-h1 {
-    margin-right:20px;
-    margin-bottom:20px;
-}
-
-a {
-    color: darkblue;
-    text-decoration: none;
-    margin-left: 2px;
-}
-
 input[type="text"],
-input[type="password"] {
+input[type="number"] {
     width: 200px;
     padding: 5px;
     margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#meatBtn {
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,19 +45,10 @@ input[type="password"] {
 #infoLbl {
     color: red;
     font-weight: bold;
-    margin-bottom: 10px;
-}
-
-#genderBtn {
-    width: 200px;
-    padding: 5px;
     margin-bottom: 5px;
-    display: flex;
-    padding: 5px;
 }
 
-#registerBtn {
-    margin-top:10px;
+#submitBtn {
     background-color: cornflowerblue;
     color: white;
     padding: 10px;
@@ -69,15 +58,10 @@ input[type="password"] {
     justify-content: center;
     align-items: center;
     font-size: medium;
-    margin-left: 75px;
+    margin-left: 70px;
     border-radius: 10px;
 }
 
-
-#registerBtn:hover {
-    background-color: darkblue;
-}
-
-a:hover {
-    color: cornflowerblue;
-}
+    #submitBtn:hover {
+        background-color: darkblue;
+    }

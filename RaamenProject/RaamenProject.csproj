@@ -91,14 +91,20 @@
     </Content>
     <Content Include="View\Authentication\LoginStyle.css" />
     <Content Include="View\Authentication\RegisterStyle.css" />
+    <Content Include="View\HomeStyle.css" />
+    <Content Include="View\Profile\UpdateProfileStyle.css" />
+    <Content Include="View\Profile\ViewProfileStyle.css" />
     <Content Include="View\Ramen\addRamen.aspx" />
     <Content Include="View\Authentication\Login.aspx" />
     <Content Include="View\Profile\UpdateProfile.aspx" />
     <Content Include="View\Profile\ViewProfile.aspx" />
     <Content Include="View\Authentication\Register.aspx" />
     <Content Include="View\Home.aspx" />
+    <Content Include="View\Ramen\addRamenStyle.css" />
     <Content Include="View\Ramen\updateRamen.aspx" />
+    <Content Include="View\Ramen\updateRamenStyle.css" />
     <Content Include="View\Ramen\viewRamen.aspx" />
+    <Content Include="View\Ramen\viewRamenStyle.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

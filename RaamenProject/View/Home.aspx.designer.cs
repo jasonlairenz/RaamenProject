@@ -24,6 +24,24 @@ namespace RaamenProject.View
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// orderRamenBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button orderRamenBtn;
+
+        /// <summary>
+        /// historyBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button historyBtn;
+
+        /// <summary>
         /// profileBtn control.
         /// </summary>
         /// <remarks>

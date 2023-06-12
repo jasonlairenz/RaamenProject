@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="HomeStyle.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,12 +13,14 @@
             <nav>
                 <%if (getUserRole() == 1) { %>
                 <%--member--%>
-                    <a href="">Order Ramen</a>
-                    <a href="">History</a>
+                    <asp:Button CssClass="navBtn" ID="orderRamenBtn" runat="server" Text="Order" />
+                    <asp:Button CssClass="navBtn" ID="historyBtn" runat="server" Text="History" />
+                    
 
                 
                 <% } else if(getUserRole() == 2){ %>
                 <%--admin--%>
+                    
                     <a href="Ramen/viewRamen.aspx">Manage Ramen</a>
                     <a href="">Order Queue</a>
                     <a href="">History</a>
@@ -31,8 +34,8 @@
                 <% } %>
 
                 
-                <asp:Button ID="profileBtn" runat="server" Text="Profile" OnClick="profileBtn_Click" />
-                <asp:Button ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />
+                <asp:Button CssClass="navBtn" ID="profileBtn" runat="server" Text="Profile" OnClick="profileBtn_Click" />
+                <asp:Button CssClass="navBtn" ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />
             </nav>
 
             <%if (getUserRole() == 1) { %>
