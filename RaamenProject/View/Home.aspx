@@ -13,7 +13,7 @@
             <nav>
                 <%if (getUserRole() == 1) { %>
                 <%--member--%>
-                    <asp:Button CssClass="navBtn" ID="orderRamenBtn" runat="server" Text="Order" />
+                    <asp:Button CssClass="navBtn" ID="orderRamenBtn" runat="server" Text="Order" OnClick="orderRamenBtn_Click" />
                     <asp:Button CssClass="navBtn" ID="historyBtn" runat="server" Text="History" />
                     
 
