@@ -4,16 +4,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using RaamenProject.Model;
+using System.Text.RegularExpressions;
 
 namespace RaamenProject.Controller
 {
     public class RamenController
     {
-        public static void addRamen(int Meatid, String Name, String Borth, String Price)
+        public static String addRamen(int Meatid, String Name, String Borth, String Price)
         {
-            RamenHandler.addRamen(Meatid, Name, Borth, Price);
-           
+            if (Name.Equals(""))
+            {
+                return "Name Must be filled";
+            }
 
+            else if (!(Name.Contains("Ramen")))
+            {
+                return "Username must contain 'Ramen'";
+            }
+            else if (Borth.Equals(""))
+            {
+                return "Borth must be filled";
+            }
+            else if (Price.Equals(""))
+            {
+                return "Price must be filled";
+            }
+            else if (int.Parse(Price) < 3000)
+            {
+                return "Price must be at least 3000";
+            }
+            else
+            {
+                RamenHandler.addRamen(Meatid, Name, Borth, Price);
+                return "Success";
+            }
         }
 
         public static List<Raman> viewRamen()
@@ -26,9 +50,34 @@ namespace RaamenProject.Controller
             return RamenHandler.viewRamenById(id);
         }
 
-        public static void updateRamen(int id, int Meatid, String Name, String Borth, String Price)
+        public static String updateRamen(int id, int Meatid, String Name, String Borth, String Price)
         {
-            RamenHandler.updateRamen(id, Meatid, Name, Borth, Price);
+            if (Name.Equals(""))
+            {
+                return "Name Must be filled";
+            }
+
+            else if (!(Name.Contains("Ramen")))
+            {
+                return "Username must contain 'Ramen'";
+            }
+            else if (Borth.Equals(""))
+            {
+                return "Borth must be filled";
+            }
+            else if (Price.Equals(""))
+            {
+                return "Price must be filled";
+            }
+            else if (int.Parse(Price) < 3000)
+            {
+                return "Price must be at least 3000";
+            }
+            else
+            {
+                RamenHandler.updateRamen(id, Meatid, Name, Borth, Price);
+                return "Success";
+            }
         }
 
         public static void deleteRamen(int id)
