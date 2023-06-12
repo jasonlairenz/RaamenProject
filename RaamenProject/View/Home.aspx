@@ -12,33 +12,25 @@
             <nav>
                 <%if (getUserRole() == 1) { %>
                 <%--member--%>
-                <asp:BulletedList ID="memberNav" runat="server" >
-                    <asp:ListItem>Order Ramen</asp:ListItem>
-                    <asp:ListItem>History</asp:ListItem>
-                </asp:BulletedList>
-
+                    <a href="">Order Ramen</a>
+                    <a href="">History</a>
 
                 
                 <% } else if(getUserRole() == 2){ %>
                 <%--admin--%>
-                <asp:BulletedList ID="adminNav" runat="server" >
-                    <asp:ListItem>Manage Ramen</asp:ListItem>
-                    <asp:ListItem>Order Queue</asp:ListItem>
-                    <asp:ListItem>History</asp:ListItem>
-                    <asp:ListItem>Report</asp:ListItem>
-                </asp:BulletedList>
+                    <a href="Ramen/viewRamen.aspx">Manage Ramen</a>
+                    <a href="">Order Queue</a>
+                    <a href="">History</a>
+                    <a href="">Report</a>
                 
                 <% } else if(getUserRole() == 3){ %>
                 <%--staff--%>
-                <asp:BulletedList ID="staffNav" runat="server" >
-                    <asp:ListItem>Home</asp:ListItem>
-                    <asp:ListItem>Manage Ramen</asp:ListItem>
-                    <asp:ListItem>Order Queue</asp:ListItem>
-                </asp:BulletedList>
+                    <a href="">Home</a>
+                    <a href="Ramen/viewRamen.aspx">Manage Ramen</a>
+                    <a href="">Order Queue</a>
                 <% } %>
 
-
-                <asp:Button ID="profileBtn" runat="server" Text="Profile" OnClick="profileBtn_Click" />
+                <a href="Profile/ViewProfile.aspx">Profile</a>
                 <asp:Button ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />
             </nav>
 
