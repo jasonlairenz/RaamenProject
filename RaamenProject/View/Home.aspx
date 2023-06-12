@@ -12,7 +12,7 @@
             <nav>
                 <%if (getUserRole() == 1) { %>
                 <%--member--%>
-                    <a href="">Order Ramen</a>
+                    <asp:Button ID="orderRamen" runat="server" Text="Order Ramen" OnClick="orderRamen_Click" />
                     <a href="">History</a>
 
                 

@@ -25,6 +25,7 @@ namespace RaamenProject.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Header> Headers { get; set; }
         public virtual DbSet<Meat> Meats { get; set; }
         public virtual DbSet<Raman> Ramen { get; set; }

@@ -78,5 +78,11 @@ namespace RaamenProject.View
             int id = int.Parse(Request.QueryString["UserId"]);
             Response.Redirect("~/View/Profile/ViewProfile.aspx?UserId=" + id);
         }
+
+        protected void orderRamen_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(Request.QueryString["UserId"]);
+            Response.Redirect("~/View/Ramen/orderRamen.aspx?UserId=" + id);
+        }
     }
 }

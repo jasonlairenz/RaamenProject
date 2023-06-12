@@ -44,5 +44,11 @@ namespace RaamenProject.Repository
             db.SaveChanges();
         }
 
+        public static String ramenName(int ramenId)
+        {
+            String ramenName = (from data in db.Ramen where data.id.Equals(ramenId) select data.Name).FirstOrDefault();
+            return ramenName;
+        }
+
     }
 }

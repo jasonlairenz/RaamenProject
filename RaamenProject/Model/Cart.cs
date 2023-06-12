@@ -12,26 +12,22 @@ namespace RaamenProject.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Cart
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Cart()
         {
-            this.Carts = new HashSet<Cart>();
-            this.Headers = new HashSet<Header>();
+            this.Details = new HashSet<Detail>();
         }
     
-        public int id { get; set; }
-        public int Roleid { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string Gender { get; set; }
-        public string Password { get; set; }
+        public int CartId { get; set; }
+        public int UserId { get; set; }
+        public int RamenId { get; set; }
+        public int Quantity { get; set; }
     
+        public virtual Raman Raman { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cart> Carts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Header> Headers { get; set; }
-        public virtual Role Role { get; set; }
+        public virtual ICollection<Detail> Details { get; set; }
     }
 }

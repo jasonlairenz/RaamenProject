@@ -37,5 +37,10 @@ namespace RaamenProject.Handler
             RamenRepository.deleteRamen(id);
         }
 
+        public static String ramenName(int RamenId)
+        {
+            return RamenRepository.ramenName(RamenId);
+        }
+
     }
 }

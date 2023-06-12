@@ -97,17 +97,24 @@
     <Content Include="View\Profile\ViewProfile.aspx" />
     <Content Include="View\Authentication\Register.aspx" />
     <Content Include="View\Home.aspx" />
+    <Content Include="View\Ramen\orderRamen.aspx" />
     <Content Include="View\Ramen\updateRamen.aspx" />
     <Content Include="View\Ramen\viewRamen.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CartController.cs" />
     <Compile Include="Controller\RamenController.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\RamenFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
+    <Compile Include="Handler\CartHandler.cs" />
     <Compile Include="Handler\RamenHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
+    <Compile Include="Model\Cart.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Detail.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -142,6 +149,7 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CartRepository.cs" />
     <Compile Include="Repository\RamenRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="View\Ramen\addRamen.aspx.cs">
@@ -185,6 +193,13 @@
     </Compile>
     <Compile Include="View\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ramen\orderRamen.aspx.cs">
+      <DependentUpon>orderRamen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Ramen\orderRamen.aspx.designer.cs">
+      <DependentUpon>orderRamen.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Ramen\updateRamen.aspx.cs">
       <DependentUpon>updateRamen.aspx</DependentUpon>

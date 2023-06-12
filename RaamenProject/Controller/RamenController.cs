@@ -40,6 +40,11 @@ namespace RaamenProject.Controller
             }
         }
 
+        internal static List<Raman> GetAllRamen()
+        {
+            throw new NotImplementedException();
+        }
+
         public static List<Raman> viewRamen()
         {
             return RamenHandler.viewRamen();
@@ -83,6 +88,11 @@ namespace RaamenProject.Controller
         public static void deleteRamen(int id)
         {
             RamenHandler.deleteRamen(id);
+        }
+
+        public static String ramenName(int RamenId)
+        {
+            return RamenHandler.ramenName(RamenId);
         }
     }
 }
