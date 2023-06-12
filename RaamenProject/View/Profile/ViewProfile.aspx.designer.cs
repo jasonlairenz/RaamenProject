@@ -42,6 +42,15 @@ namespace RaamenProject.View.Profile
         protected global::System.Web.UI.WebControls.Label usernameLbl;
 
         /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
         /// emailLbl control.
         /// </summary>
         /// <remarks>
@@ -51,6 +60,15 @@ namespace RaamenProject.View.Profile
         protected global::System.Web.UI.WebControls.Label emailLbl;
 
         /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+
+        /// <summary>
         /// genderLbl control.
         /// </summary>
         /// <remarks>
@@ -58,6 +76,15 @@ namespace RaamenProject.View.Profile
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label genderLbl;
+
+        /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
         /// passLbl control.
