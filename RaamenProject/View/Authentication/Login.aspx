@@ -4,6 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    
+    <link href="LoginStyle.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
@@ -15,17 +17,17 @@
             </div>
 
             <div>
-                <asp:Label ID="Label3" runat="server" Text="Password"></asp:Label><br />
+                <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label><br />
                 <asp:TextBox ID="passTxt" runat="server"></asp:TextBox><br 
             </div>
 
          <asp:Label ID="statusLbl" runat="server" Text=""></asp:Label><br />
          <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" /><br />
 
-        <asp:Label ID="infoLbl" runat="server" Text=""></asp:Label><br /><br />
+        <asp:Label ID="infoLbl" runat="server" Text=""></asp:Label><br />
 
-        <h4>Don't have account? Register Here!</h4>
-        <asp:Button ID="registerBtn" runat="server" Text="Register" OnClick="registerBtn_Click" />
+        <p>Don't have account? <a href="Register.aspx">Register Here!</a> </p>
+        
     </form>
 </body>
 </html>

@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="RegisterStyle.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -41,8 +42,8 @@
 
             <asp:Button ID="registerBtn" runat="server" Text="Register" OnClick="registerBtn_Click" /><br />
             
-            <h4>Already have account? Login Here!</h4>
-            <asp:Button ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" />
+            <p>Already have account? <a href="Login.aspx">Login Here!</a></p>
+            
     </form>
 </body>
 </html>

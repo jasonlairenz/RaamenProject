@@ -76,7 +76,7 @@ namespace RaamenProject.View
         protected void profileBtn_Click(object sender, EventArgs e)
         {
             int id = int.Parse(Request.QueryString["UserId"]);
-            Response.Redirect("~/View/Profile/ViewProfile.aspx?UserId="+id);
+            Response.Redirect("~/View/Profile/ViewProfile.aspx?UserId=" + id);
         }
     }
 }

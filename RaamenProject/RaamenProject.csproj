@@ -89,6 +89,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="View\Authentication\LoginStyle.css" />
+    <Content Include="View\Authentication\RegisterStyle.css" />
     <Content Include="View\Ramen\addRamen.aspx" />
     <Content Include="View\Authentication\Login.aspx" />
     <Content Include="View\Profile\UpdateProfile.aspx" />

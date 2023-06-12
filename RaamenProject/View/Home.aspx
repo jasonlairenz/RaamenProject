@@ -30,7 +30,8 @@
                     <a href="">Order Queue</a>
                 <% } %>
 
-                <a href="Profile/ViewProfile.aspx">Profile</a>
+                
+                <asp:Button ID="profileBtn" runat="server" Text="Profile" OnClick="profileBtn_Click" />
                 <asp:Button ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />
             </nav>
 
