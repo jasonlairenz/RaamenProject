@@ -38,7 +38,7 @@ namespace RaamenProject.View.Profile
 
             if (statusLbl.Text.Equals("insert successfully"))
             {
-                Response.Redirect("~/View/Profile/ViewProfile.aspx");
+                Response.Redirect("~/View/Profile/ViewProfile.aspx?UserId="+Id);
             }
         }
     }
