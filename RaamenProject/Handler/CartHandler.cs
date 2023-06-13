@@ -21,9 +21,9 @@ namespace RaamenProject.Handler
             CartRepository.updateCart(CartId, UserId, RamenId, Quantity);
         }
 
-        public static List<Cart> viewCart()
+        public static List<Cart> viewCart(int UserId)
         {
-            return CartRepository.viewCart();
+            return CartRepository.viewCart(UserId);
         }
 
         public static void deleteCartById(int id)

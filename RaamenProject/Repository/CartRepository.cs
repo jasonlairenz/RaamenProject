@@ -24,9 +24,9 @@ namespace RaamenProject.Repository
             db.SaveChanges();
         }
 
-        public static List<Cart> viewCart()
+        public static List<Cart> viewCart(int UserId)
         {
-            return db.Carts.ToList<Cart>();
+            return db.Carts.Where(cart => cart.UserId == UserId).ToList();
         }
 
         public static void deleteCartAll(int UserId)

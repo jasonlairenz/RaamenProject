@@ -18,7 +18,8 @@ namespace RaamenProject.View.Ramen
                 GridView1.DataSource = RamenController.viewRamen();
                 GridView1.DataBind();
 
-                GridView2.DataSource = CartController.viewCart();
+                int UserId = int.Parse(Request.QueryString["UserId"]);
+                GridView2.DataSource = CartController.viewCart(UserId);
                 GridView2.DataBind();
             }
         }
