@@ -21,10 +21,12 @@ namespace RaamenProject.View
 
                 if (u.Roleid == 1)
                 {
+                    // member
                     roleLbl.Text = "Member";
                 }
                 else if (u.Roleid == 2)
                 {
+                    // admin
                     roleLbl.Text = "Admin";
                     GridViewStaff.DataSource = UserController.viewStaff();
                     GridViewStaff.DataBind();
@@ -34,6 +36,7 @@ namespace RaamenProject.View
                 }
                 else if (u.Roleid == 3)
                 {
+                    // staff
                     roleLbl.Text = "Staff";
                     GridViewMember.DataSource = UserController.viewMember();
                     GridViewMember.DataBind();
@@ -90,7 +93,8 @@ namespace RaamenProject.View
 
         protected void manageRamenBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Ramen/viewRamen.aspx");
+            int id = int.Parse(Request.QueryString["UserId"]);
+            Response.Redirect("~/View/Ramen/viewRamen.aspx?UserId="+id);
         }
 
         protected void historyBtn_Click(object sender, EventArgs e)
@@ -101,7 +105,8 @@ namespace RaamenProject.View
 
         protected void reportBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Transaction/Report.aspx");
+            int id = int.Parse(Request.QueryString["UserId"]);
+            Response.Redirect("~/View/Transaction/Report.aspx?UserId="+id);
         }
     }
 }

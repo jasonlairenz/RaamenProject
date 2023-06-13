@@ -15,6 +15,14 @@ namespace RaamenProject.View.Ramen
         {
             if (!Page.IsPostBack)
             {
+                int UserId = int.Parse(Request.QueryString["UserId"]);
+                User u = UserController.viewUserById(UserId);
+
+                if (u.Roleid == 1)
+                {
+                    // member
+                    Response.Redirect("~/View/Home.aspx?UserId=" + UserId);
+                }
                 int Id = int.Parse(Request.QueryString["RamenId"]);
                 Raman m = RamenController.viewRamenById(Id);
                 nameTxt.Text = m.Name;
@@ -28,6 +36,7 @@ namespace RaamenProject.View.Ramen
         {
             statusLbl.Text = "";
 
+               int UserId = int.Parse(Request.QueryString["UserId"]);
             String Name = nameTxt.Text;
             int Meat = int.Parse(meatBtn.SelectedValue);
             String Borth = borthTxt.Text;
@@ -37,7 +46,7 @@ namespace RaamenProject.View.Ramen
             statusLbl.Text = RamenController.updateRamen(Id, Meat, Name, Borth, Price);
             if (statusLbl.Text.Equals("Success"))
             {
-                Response.Redirect("~/View/Ramen/viewRamen.aspx");
+                Response.Redirect("~/View/Ramen/viewRamen.aspx?UserId="+UserId);
             }
         }
     }

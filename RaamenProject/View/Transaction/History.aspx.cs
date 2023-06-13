@@ -30,6 +30,9 @@ namespace RaamenProject.View.Transaction
                     // admin
                     GridView2.DataSource = TransactionHeaderController.viewTransaction();
                     GridView2.DataBind();
+                }else if(u.Roleid == 3)
+                {
+                    Response.Redirect("~/View/Home.aspx?UserId=" + id);
                 }
                 
             }
@@ -43,13 +46,14 @@ namespace RaamenProject.View.Transaction
         }
         protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            int id = int.Parse(Request.QueryString["UserId"]);
             int rowIdx1 = Convert.ToInt32(e.CommandArgument);
             GridViewRow r1 = GridView2.Rows[rowIdx1];
             String headerId = r1.Cells[1].Text;
             
 
 
-            Response.Redirect("~/View/Transaction/TransactionDetail.aspx?HeaderId="+ headerId);
+            Response.Redirect("~/View/Transaction/TransactionDetail.aspx?UserId="+id+"&HeaderId="+ headerId);
         }
     }
 }

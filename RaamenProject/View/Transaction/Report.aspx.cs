@@ -14,6 +14,20 @@ namespace RaamenProject.View.Transaction
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int UserId = int.Parse(Request.QueryString["UserId"]);
+            User u = UserController.viewUserById(UserId);
+
+            if (u.Roleid == 1)
+            {
+                // member
+                Response.Redirect("~/View/Home.aspx?UserId=" + UserId);
+            }
+            else if (u.Roleid == 3)
+            {
+                // staff
+                Response.Redirect("~/View/Home.aspx?UserId=" + UserId);
+            }
+
             TransactionReport Report = new TransactionReport();
             CrystalReportViewer1.ReportSource = Report;
 

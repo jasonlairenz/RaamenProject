@@ -1,4 +1,5 @@
 ﻿using RaamenProject.Controller;
+using RaamenProject.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,16 @@ namespace RaamenProject.View.Ramen
         {
             if (!Page.IsPostBack)
             {
+                int UserId = int.Parse(Request.QueryString["UserId"]);
+                User u = UserController.viewUserById(UserId);
+
+                if (u.Roleid == 1)
+                {
+                    // member
+                    Response.Redirect("~/View/Home.aspx?UserId=" + UserId);
+                }
+                
+
                 GridView1.DataSource = RamenController.viewRamen();
                 GridView1.DataBind();
             }
@@ -21,9 +32,10 @@ namespace RaamenProject.View.Ramen
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            int UserId = int.Parse(Request.QueryString["UserId"]);
             GridViewRow r = GridView1.Rows[e.RowIndex];
             String Id = r.Cells[2].Text;
-            Response.Redirect("~/View/Ramen/updateRamen.aspx?RamenId=" + Id);
+            Response.Redirect("~/View/Ramen/updateRamen.aspx?UserId="+UserId+"&RamenId=" + Id);
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -38,7 +50,8 @@ namespace RaamenProject.View.Ramen
 
         protected void addBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/Ramen/addRamen.aspx");
+            int UserId = int.Parse(Request.QueryString["UserId"]);
+            Response.Redirect("~/View/Ramen/addRamen.aspx?UserId="+UserId);
         }
     }
 }

@@ -16,10 +16,23 @@ namespace RaamenProject.View.Ramen
         {
             if (!Page.IsPostBack)
             {
+                int UserId = int.Parse(Request.QueryString["UserId"]);
+                User u = UserController.viewUserById(UserId);
+
+                if (u.Roleid == 2)
+                {
+                    // admin
+                    Response.Redirect("~/View/Home.aspx?UserId="+UserId);
+                }
+                else if (u.Roleid == 3)
+                {
+                    // staff
+                    Response.Redirect("~/View/Home.aspx?UserId="+UserId);
+                }
+
                 GridView1.DataSource = RamenController.viewRamen();
                 GridView1.DataBind();
 
-                int UserId = int.Parse(Request.QueryString["UserId"]);
                 GridView2.DataSource = CartController.listViewCart(UserId);
                 GridView2.DataBind();
             }

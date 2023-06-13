@@ -1,4 +1,5 @@
 ﻿using RaamenProject.Controller;
+using RaamenProject.Model;
 using RaamenProject.Repository;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,15 @@ namespace RaamenProject.View.Transaction
         {
             if (!Page.IsPostBack)
             {
+                int UserId = int.Parse(Request.QueryString["UserId"]);
+                User u = UserController.viewUserById(UserId);
+
+                if (u.Roleid == 1)
+                {
+                    // member
+                    Response.Redirect("~/View/Home.aspx?UserId=" + UserId);
+                }
+
                 GridView2.DataSource = TransactionHeaderController.viewTransaction();
                 GridView2.DataBind();
             }
