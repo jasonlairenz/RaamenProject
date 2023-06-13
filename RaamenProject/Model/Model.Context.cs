@@ -26,12 +26,12 @@ namespace RaamenProject.Model
         }
     
         public virtual DbSet<Cart> Carts { get; set; }
+        public virtual DbSet<Detail> Details { get; set; }
         public virtual DbSet<Header> Headers { get; set; }
         public virtual DbSet<Meat> Meats { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Raman> Ramen { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Detail> Details { get; set; }
     }
 }

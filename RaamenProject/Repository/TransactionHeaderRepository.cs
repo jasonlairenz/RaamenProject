@@ -24,5 +24,11 @@ namespace RaamenProject.Repository
         {
             return db.Headers.Where(cart => cart.CustomerId == UserId).ToList();
         }
+
+        public static int findHeaderId(int orderId)
+        {
+            int headerId = (from data in db.Headers where data.OrderId == orderId select data.id).FirstOrDefault();
+            return headerId;
+        }
     }
 }

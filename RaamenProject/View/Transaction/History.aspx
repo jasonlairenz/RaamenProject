@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <div>
             <h1>History</h1>
-            <asp:GridView ID="GridView2" runat="server" OnSelectedIndexChanged="GridView2_SelectedIndexChanged">
+            <asp:GridView ID="GridView2" runat="server" OnRowCommand="GridView2_RowCommand" >
                 <Columns>
                     <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Detail" ShowHeader="True" Text="Detail" />
                 </Columns>

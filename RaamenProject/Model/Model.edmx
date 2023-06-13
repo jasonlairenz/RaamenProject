@@ -15,18 +15,13 @@
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="OrderId" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJECT\RAAMENPROJECT\APP_DATA\DATABASE.MDF.dbo.Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Detail">
           <Key>
-            <PropertyRef Name="Headerid" />
-            <PropertyRef Name="Ramenid" />
-            <PropertyRef Name="Cartid" />
-            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Headerid" Type="int" Nullable="false" />
           <Property Name="Ramenid" Type="int" Nullable="false" />
-          <Property Name="Cartid" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Header">
@@ -105,7 +100,7 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detail__Headerid__76969D2E">
+        <Association Name="FK__Detail__Headerid__625A9A57">
           <End Role="Header" Type="Self.Header" Multiplicity="1" />
           <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -117,7 +112,7 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detail__Ramenid__778AC167">
+        <Association Name="FK__Detail__Ramenid__634EBE90">
           <End Role="Ramen" Type="Self.Ramen" Multiplicity="1" />
           <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -167,20 +162,13 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
         </Association>
         <EntityContainer Name="DatabaseModelStoreContainer">
           <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Detail" EntityType="Self.Detail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Header" EntityType="Self.Header" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Meat" EntityType="Self.Meat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ramen" EntityType="Self.Ramen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Detail" EntityType="Self.Detail" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Detail].[Headerid] AS [Headerid], 
-    [Detail].[Ramenid] AS [Ramenid], 
-    [Detail].[Cartid] AS [Cartid], 
-    [Detail].[Quantity] AS [Quantity]
-    FROM [dbo].[Detail] AS [Detail]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK__Cart__RamenId__05D8E0BE" Association="Self.FK__Cart__RamenId__05D8E0BE">
             <End Role="Ramen" EntitySet="Ramen" />
             <End Role="Cart" EntitySet="Cart" />
@@ -189,11 +177,11 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
             <End Role="User" EntitySet="User" />
             <End Role="Cart" EntitySet="Cart" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detail__Headerid__76969D2E" Association="Self.FK__Detail__Headerid__76969D2E">
+          <AssociationSet Name="FK__Detail__Headerid__625A9A57" Association="Self.FK__Detail__Headerid__625A9A57">
             <End Role="Header" EntitySet="Header" />
             <End Role="Detail" EntitySet="Detail" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detail__Ramenid__778AC167" Association="Self.FK__Detail__Ramenid__778AC167">
+          <AssociationSet Name="FK__Detail__Ramenid__634EBE90" Association="Self.FK__Detail__Ramenid__634EBE90">
             <End Role="Ramen" EntitySet="Ramen" />
             <End Role="Detail" EntitySet="Detail" />
           </AssociationSet>
@@ -227,6 +215,17 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
           <NavigationProperty Name="Raman" Relationship="Self.FK__Cart__RamenId__05D8E0BE" FromRole="Cart" ToRole="Ramen" />
           <NavigationProperty Name="User" Relationship="Self.FK__Cart__UserId__04E4BC85" FromRole="Cart" ToRole="User" />
         </EntityType>
+        <EntityType Name="Detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Headerid" Type="Int32" Nullable="false" />
+          <Property Name="Ramenid" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Header" Relationship="Self.FK__Detail__Headerid__625A9A57" FromRole="Detail" ToRole="Header" />
+          <NavigationProperty Name="Raman" Relationship="Self.FK__Detail__Ramenid__634EBE90" FromRole="Detail" ToRole="Ramen" />
+        </EntityType>
         <EntityType Name="Header">
           <Key>
             <PropertyRef Name="id" />
@@ -236,7 +235,7 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
           <Property Name="Staffid" Type="Int32" Nullable="false" />
           <Property Name="Date" Type="DateTime" Precision="0" />
           <Property Name="OrderId" Type="Int32" />
-          <NavigationProperty Name="Details" Relationship="Self.FK__Detail__Headerid__76969D2E" FromRole="Header" ToRole="Detail" />
+          <NavigationProperty Name="Details" Relationship="Self.FK__Detail__Headerid__625A9A57" FromRole="Header" ToRole="Detail" />
           <NavigationProperty Name="User" Relationship="Self.FK__Header__Customer__2D27B809" FromRole="Header" ToRole="User" />
         </EntityType>
         <EntityType Name="Meat">
@@ -264,8 +263,8 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
           <Property Name="Borth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Carts" Relationship="Self.FK__Cart__RamenId__05D8E0BE" FromRole="Ramen" ToRole="Cart" />
+          <NavigationProperty Name="Details" Relationship="Self.FK__Detail__Ramenid__634EBE90" FromRole="Ramen" ToRole="Detail" />
           <NavigationProperty Name="Meat" Relationship="Self.FK__Ramen__Meatid__276EDEB3" FromRole="Ramen" ToRole="Meat" />
-          <NavigationProperty Name="Details" Relationship="Self.FK__Detail__Ramenid__778AC167" FromRole="Ramen" ToRole="Detail" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -288,20 +287,6 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
           <NavigationProperty Name="Carts" Relationship="Self.FK__Cart__UserId__04E4BC85" FromRole="User" ToRole="Cart" />
           <NavigationProperty Name="Headers" Relationship="Self.FK__Header__Customer__2D27B809" FromRole="User" ToRole="Header" />
           <NavigationProperty Name="Role" Relationship="Self.FK__User__Roleid__2A4B4B5E" FromRole="User" ToRole="Role" />
-        </EntityType>
-        <EntityType Name="Detail">
-          <Key>
-            <PropertyRef Name="Headerid" />
-            <PropertyRef Name="Ramenid" />
-            <PropertyRef Name="Cartid" />
-            <PropertyRef Name="Quantity" />
-          </Key>
-          <Property Name="Headerid" Type="Int32" Nullable="false" />
-          <Property Name="Ramenid" Type="Int32" Nullable="false" />
-          <Property Name="Cartid" Type="Int32" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Header" Relationship="Self.FK__Detail__Headerid__76969D2E" FromRole="Detail" ToRole="Header" />
-          <NavigationProperty Name="Raman" Relationship="Self.FK__Detail__Ramenid__778AC167" FromRole="Detail" ToRole="Ramen" />
         </EntityType>
         <Association Name="FK__Cart__RamenId__05D8E0BE">
           <End Role="Ramen" Type="Self.Raman" Multiplicity="1" />
@@ -327,7 +312,7 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detail__Headerid__76969D2E">
+        <Association Name="FK__Detail__Headerid__625A9A57">
           <End Role="Header" Type="Self.Header" Multiplicity="1" />
           <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -336,6 +321,18 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
             </Principal>
             <Dependent Role="Detail">
               <PropertyRef Name="Headerid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Detail__Ramenid__634EBE90">
+          <End Role="Ramen" Type="Self.Raman" Multiplicity="1" />
+          <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ramen">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Detail">
+              <PropertyRef Name="Ramenid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -363,18 +360,6 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Detail__Ramenid__778AC167">
-          <End Role="Ramen" Type="Self.Raman" Multiplicity="1" />
-          <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ramen">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Detail">
-              <PropertyRef Name="Ramenid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__User__Roleid__2A4B4B5E">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -389,13 +374,13 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
         </Association>
         <EntityContainer Name="RaamenDatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Carts" EntityType="Self.Cart" />
+          <EntitySet Name="Details" EntityType="Self.Detail" />
           <EntitySet Name="Headers" EntityType="Self.Header" />
           <EntitySet Name="Meats" EntityType="Self.Meat" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
           <EntitySet Name="Ramen" EntityType="Self.Raman" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="Users" EntityType="Self.User" />
-          <EntitySet Name="Details" EntityType="Self.Detail" />
           <AssociationSet Name="FK__Cart__RamenId__05D8E0BE" Association="Self.FK__Cart__RamenId__05D8E0BE">
             <End Role="Ramen" EntitySet="Ramen" />
             <End Role="Cart" EntitySet="Carts" />
@@ -404,8 +389,12 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
             <End Role="User" EntitySet="Users" />
             <End Role="Cart" EntitySet="Carts" />
           </AssociationSet>
-          <AssociationSet Name="FK__Detail__Headerid__76969D2E" Association="Self.FK__Detail__Headerid__76969D2E">
+          <AssociationSet Name="FK__Detail__Headerid__625A9A57" Association="Self.FK__Detail__Headerid__625A9A57">
             <End Role="Header" EntitySet="Headers" />
+            <End Role="Detail" EntitySet="Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Detail__Ramenid__634EBE90" Association="Self.FK__Detail__Ramenid__634EBE90">
+            <End Role="Ramen" EntitySet="Ramen" />
             <End Role="Detail" EntitySet="Details" />
           </AssociationSet>
           <AssociationSet Name="FK__Header__Customer__2D27B809" Association="Self.FK__Header__Customer__2D27B809">
@@ -415,10 +404,6 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
           <AssociationSet Name="FK__Ramen__Meatid__276EDEB3" Association="Self.FK__Ramen__Meatid__276EDEB3">
             <End Role="Meat" EntitySet="Meats" />
             <End Role="Ramen" EntitySet="Ramen" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Detail__Ramenid__778AC167" Association="Self.FK__Detail__Ramenid__778AC167">
-            <End Role="Ramen" EntitySet="Ramen" />
-            <End Role="Detail" EntitySet="Details" />
           </AssociationSet>
           <AssociationSet Name="FK__User__Roleid__2A4B4B5E" Association="Self.FK__User__Roleid__2A4B4B5E">
             <End Role="Role" EntitySet="Roles" />
@@ -439,6 +424,16 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
                 <ScalarProperty Name="RamenId" ColumnName="RamenId" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Details">
+            <EntityTypeMapping TypeName="DatabaseModel.Detail">
+              <MappingFragment StoreEntitySet="Detail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Headerid" ColumnName="Headerid" />
+                <ScalarProperty Name="Ramenid" ColumnName="Ramenid" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -497,16 +492,6 @@ warning 6002: The table/view 'C:\USERS\JOSHUA JEVON IRAWAN\DOCUMENTS\RAAMENPROJE
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Details">
-            <EntityTypeMapping TypeName="DatabaseModel.Detail">
-              <MappingFragment StoreEntitySet="Detail">
-                <ScalarProperty Name="Headerid" ColumnName="Headerid" />
-                <ScalarProperty Name="Ramenid" ColumnName="Ramenid" />
-                <ScalarProperty Name="Cartid" ColumnName="Cartid" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

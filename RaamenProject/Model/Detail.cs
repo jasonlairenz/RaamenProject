@@ -14,9 +14,9 @@ namespace RaamenProject.Model
     
     public partial class Detail
     {
+        public int id { get; set; }
         public int Headerid { get; set; }
         public int Ramenid { get; set; }
-        public int Cartid { get; set; }
         public int Quantity { get; set; }
     
         public virtual Header Header { get; set; }

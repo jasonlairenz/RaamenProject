@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9d54cee8b1f941ce948b8e7403e8b673" Name="Diagram1">
+      <Diagram DiagramId="e5ffe084aa814fa68147cd773a581c1e" Name="Diagram1">
         <EntityTypeShape EntityType="DatabaseModel.Cart" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Detail" Width="1.5" PointX="7.5" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Header" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Meat" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Order" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Raman" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Role" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.User" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Detail" Width="1.5" PointX="7.5" PointY="5.875" IsExpanded="true" />
         <AssociationConnector Association="DatabaseModel.FK__Cart__RamenId__05D8E0BE" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseModel.FK__Cart__UserId__04E4BC85" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Detail__Headerid__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Detail__Headerid__625A9A57" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Detail__Ramenid__634EBE90" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseModel.FK__Header__Customer__2D27B809" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseModel.FK__Ramen__Meatid__276EDEB3" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Detail__Ramenid__778AC167" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseModel.FK__User__Roleid__2A4B4B5E" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

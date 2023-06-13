@@ -12,12 +12,12 @@ namespace RaamenProject.View.Transaction
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!Page.IsPostBack)
-            //{
-            //    int UserId = int.Parse(Request.QueryString["UserId"]);
-            //    GridView2.DataSource = TransactionHeaderController.viewTransactionById(UserId);
-            //    GridView2.DataBind();
-            //}
+            if (!Page.IsPostBack)
+            {
+                int HeaderId = int.Parse(Request.QueryString["HeaderId"]);
+                GridView2.DataSource = TransactionDetailController.viewDetailById(HeaderId);
+                GridView2.DataBind();
+            }
         }
 
         protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)

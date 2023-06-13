@@ -20,13 +20,14 @@ namespace RaamenProject.View.Transaction
 
                 if (u.Roleid == 1)
                 {
+                    // member
                     int UserId = int.Parse(Request.QueryString["UserId"]);
                     GridView2.DataSource = TransactionHeaderController.viewTransactionById(UserId);
                     GridView2.DataBind();
                 }
                 else if (u.Roleid == 2)
                 {
-                    int UserId = int.Parse(Request.QueryString["UserId"]);
+                    // admin
                     GridView2.DataSource = TransactionHeaderController.viewTransaction();
                     GridView2.DataBind();
                 }
@@ -40,11 +41,15 @@ namespace RaamenProject.View.Transaction
             User u = UserController.viewUserById(id);
             return u.Roleid;
         }
-
-        protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+        protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            int id = int.Parse(Request.QueryString["UserId"]);
-            Response.Redirect("~/View/Transaction/TransactionDetail.aspx?HeaderId=");
+            int rowIdx1 = Convert.ToInt32(e.CommandArgument);
+            GridViewRow r1 = GridView2.Rows[rowIdx1];
+            String headerId = r1.Cells[1].Text;
+            
+
+
+            Response.Redirect("~/View/Transaction/TransactionDetail.aspx?HeaderId="+ headerId);
         }
     }
 }

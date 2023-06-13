@@ -78,6 +78,21 @@ namespace RaamenProject.View.Ramen
             int UserId = int.Parse(Request.QueryString["UserId"]);
             int orderId = CartController.getOrderNumber();
             statusLbl.Text = TransactionHeaderController.checkout(UserId, staffId, orderId );
+            
+
+            int headerId = TransactionHeaderRepository.findHeaderId(orderId);
+
+            foreach (GridViewRow row in GridView2.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    int ramenId = int.Parse(row.Cells[3].Text);
+                    int quantity = int.Parse(row.Cells[4].Text);
+
+                    TransactionDetailController.addDetail(headerId, ramenId, quantity);
+                }
+            }
+
             CartController.deleteCartAll(UserId);
             CartController.updateOrderNumber();
             if (statusLbl.Text.Equals("Success"))
