@@ -32,6 +32,9 @@
                 </Columns>
             </asp:GridView>
 
+            <asp:Button ID="clearCartBtn" runat="server" Text="Clear Cart" />
+            <asp:Button ID="buyBtn" runat="server" Text="Buy" />
+
         </div>
     </form>
 </body>

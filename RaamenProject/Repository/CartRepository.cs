@@ -20,7 +20,7 @@ namespace RaamenProject.Repository
             Cart cart = db.Carts.Find(CartId);
             cart.UserId = UserId;
             cart.RamenId = RamenId;
-            cart.Quantity += 1;
+            cart.Quantity += Quantity;
             db.SaveChanges();
         }
 
