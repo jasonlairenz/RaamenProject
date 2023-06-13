@@ -18,9 +18,6 @@ namespace RaamenProject.View
             {
                 int id = int.Parse(Request.QueryString["UserId"]);
                 User u = UserController.viewUserById(id);
-                //usernameLbl.Text = u.Username;
-                //emailLbl.Text = u.Email;
-                //genderLbl.Text = u.Gender;
 
                 if (u.Roleid == 1)
                 {
@@ -83,6 +80,23 @@ namespace RaamenProject.View
         {
             int id = int.Parse(Request.QueryString["UserId"]);
             Response.Redirect("~/View/Ramen/orderRamen.aspx?UserId=" + id);
+        }
+
+        protected void orderQueueBtn_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(Request.QueryString["UserId"]);
+            Response.Redirect("~/View/Transaction/TransactionQueue.aspx?UserId=" + id);
+        }
+
+        protected void manageRamenBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Ramen/viewRamen.aspx");
+        }
+
+        protected void historyBtn_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(Request.QueryString["UserId"]);
+            Response.Redirect("~/View/Transaction/History.aspx?UserId=" + id);
         }
     }
 }

@@ -106,17 +106,23 @@
     <Content Include="View\Ramen\updateRamenStyle.css" />
     <Content Include="View\Ramen\viewRamen.aspx" />
     <Content Include="View\Ramen\viewRamenStyle.css" />
+    <Content Include="View\Transaction\History.aspx" />
+    <Content Include="View\Transaction\TransactionDetail.aspx" />
+    <Content Include="View\Transaction\TransactionQueue.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CartController.cs" />
     <Compile Include="Controller\RamenController.cs" />
+    <Compile Include="Controller\TransactionHeaderController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\RamenFactory.cs" />
+    <Compile Include="Factory\TransactionHeaderFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\CartHandler.cs" />
     <Compile Include="Handler\RamenHandler.cs" />
+    <Compile Include="Handler\TransactionHeaderHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Cart.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -157,6 +163,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CartRepository.cs" />
     <Compile Include="Repository\RamenRepository.cs" />
+    <Compile Include="Repository\TransactionHeaderRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="View\Ramen\addRamen.aspx.cs">
       <DependentUpon>addRamen.aspx</DependentUpon>
@@ -220,6 +227,27 @@
     </Compile>
     <Compile Include="View\Ramen\viewRamen.aspx.designer.cs">
       <DependentUpon>viewRamen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\History.aspx.cs">
+      <DependentUpon>History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\History.aspx.designer.cs">
+      <DependentUpon>History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\TransactionDetail.aspx.cs">
+      <DependentUpon>TransactionDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\TransactionDetail.aspx.designer.cs">
+      <DependentUpon>TransactionDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\TransactionQueue.aspx.cs">
+      <DependentUpon>TransactionQueue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\TransactionQueue.aspx.designer.cs">
+      <DependentUpon>TransactionQueue.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

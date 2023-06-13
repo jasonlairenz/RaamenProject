@@ -14,26 +14,23 @@
                 <%if (getUserRole() == 1) { %>
                 <%--member--%>
                     <asp:Button CssClass="navBtn" ID="orderRamenBtn" runat="server" Text="Order" OnClick="orderRamenBtn_Click" />
-                    <asp:Button CssClass="navBtn" ID="historyBtn" runat="server" Text="History" />
-                    
-
-                
+                    <asp:Button CssClass="navBtn" ID="historyBtn1" runat="server" Text="History" OnClick="historyBtn_Click" />
+          
                 <% } else if(getUserRole() == 2){ %>
                 <%--admin--%>
                     
-                    <a href="Ramen/viewRamen.aspx">Manage Ramen</a>
-                    <a href="">Order Queue</a>
-                    <a href="">History</a>
-                    <a href="">Report</a>
+                    <asp:Button CssClass="navBtn" ID="manageRamenBtn1" runat="server" Text="Manage Ramen" OnClick="manageRamenBtn_Click" />
+                    <asp:Button CssClass="navBtn" ID="orderQueueBtn1" runat="server" Text="Order Queue" OnClick="orderQueueBtn_Click" />
+                    <asp:Button CssClass="navBtn" ID="historyBtn2" runat="server" Text="History" OnClick="historyBtn_Click"/>
+                    <asp:Button CssClass="navBtn" ID="reportBtn" runat="server" Text="Report" />
                 
                 <% } else if(getUserRole() == 3){ %>
                 <%--staff--%>
-                    <a href="">Home</a>
-                    <a href="Ramen/viewRamen.aspx">Manage Ramen</a>
-                    <a href="">Order Queue</a>
+                    <asp:Button CssClass="navBtn" ID="homeBtn" runat="server" Text="Home" />
+                    <asp:Button CssClass="navBtn" ID="manageRamenBtn2" runat="server" Text="Manage Ramen" OnClick="manageRamenBtn_Click" />
+                    <asp:Button CssClass="navBtn" ID="orderQueueBtn2" runat="server" Text="Order Queue" OnClick="orderQueueBtn_Click" />
                 <% } %>
 
-                
                 <asp:Button CssClass="navBtn" ID="profileBtn" runat="server" Text="Profile" OnClick="profileBtn_Click" />
                 <asp:Button CssClass="navBtn" ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />
             </nav>

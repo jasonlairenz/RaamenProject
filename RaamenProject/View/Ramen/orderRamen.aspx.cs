@@ -69,5 +69,18 @@ namespace RaamenProject.View.Ramen
 
             Response.Redirect("~/View/Ramen/orderRamen.aspx?UserId=" + UserId);
         }
+
+        protected void buyBtn_Click(object sender, EventArgs e)
+        {
+            int staffId = 3;
+            int UserId = int.Parse(Request.QueryString["UserId"]);
+            statusLbl.Text = TransactionHeaderController.checkout(UserId, staffId);
+            CartController.deleteCartAll(UserId);
+
+            if (statusLbl.Text.Equals("Success"))
+            { 
+                Response.Redirect("~/View/Transaction/History.aspx?UserId=" + UserId);
+            }
+        }
     }
 }
