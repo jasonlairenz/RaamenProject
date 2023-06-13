@@ -9,9 +9,9 @@ namespace RaamenProject.Controller
 {
     public class CartController
     {
-        public static void addToCart( int UserId, int RamenId, int Quantity)
+        public static void addToCart( int UserId, int RamenId, int Quantity, int orderId)
         {
-            CartHandler.addToCart( UserId, RamenId, Quantity);
+            CartHandler.addToCart( UserId, RamenId, Quantity, orderId);
             //return "Success"
         }
         public static void updateCart(int CartId, int UserId, int RamenId, int Quantity)
@@ -45,6 +45,11 @@ namespace RaamenProject.Controller
         public static bool checkCart(int userId, int ramenId)
         {
             return CartHandler.checkCart(userId, ramenId);
+        }
+
+        public static int getOrderNumber()
+        {
+            return CartHandler.getOrderNumber();
         }
 
     }

@@ -1,5 +1,6 @@
 ﻿using RaamenProject.Controller;
 using RaamenProject.Model;
+using RaamenProject.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +47,8 @@ namespace RaamenProject.View.Ramen
             }
             else
             {
-                CartController.addToCart(UserId, RamenId, Quantity);
+                int orderId = CartController.getOrderNumber();
+                CartController.addToCart(UserId, RamenId, Quantity, orderId);
             }
             Response.Redirect("~/View/Ramen/orderRamen.aspx?UserId=" + UserId);
         }
@@ -74,9 +76,10 @@ namespace RaamenProject.View.Ramen
         {
             int staffId = 3;
             int UserId = int.Parse(Request.QueryString["UserId"]);
-            statusLbl.Text = TransactionHeaderController.checkout(UserId, staffId);
+            int orderId = CartController.getOrderNumber();
+            statusLbl.Text = TransactionHeaderController.checkout(UserId, staffId, orderId );
             CartController.deleteCartAll(UserId);
-
+            CartRepository.updateOrderId();
             if (statusLbl.Text.Equals("Success"))
             { 
                 Response.Redirect("~/View/Transaction/History.aspx?UserId=" + UserId);

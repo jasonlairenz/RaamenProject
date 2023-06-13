@@ -10,9 +10,9 @@ namespace RaamenProject.Handler
 {
     public class CartHandler
     {
-        public static void addToCart( int UserId, int RamenId, int Quantity)
+        public static void addToCart( int UserId, int RamenId, int Quantity, int orderId)
         {
-            Cart cart = CartFactory.createCart( UserId, RamenId, Quantity);
+            Cart cart = CartFactory.createCart( UserId, RamenId, Quantity, orderId);
             CartRepository.addToCart(cart);
         }
 
@@ -40,5 +40,11 @@ namespace RaamenProject.Handler
         {
             return CartRepository.checkCart(userId,ramenId);
         }
+
+        public static int getOrderNumber()
+        {
+            return CartRepository.getOrderNumber();
+        }
+
     }
 }

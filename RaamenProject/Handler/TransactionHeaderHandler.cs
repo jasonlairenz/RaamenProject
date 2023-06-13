@@ -10,9 +10,9 @@ namespace RaamenProject.Handler
 {
     public class TransactionHeaderHandler
     {
-        public static void checkout(int customerId, int staffId)
+        public static void checkout(int customerId, int staffId, int orderNumber)
         {
-            Header header = TransactionHeaderFactory.createTransaction(customerId, staffId);
+            Header header = TransactionHeaderFactory.createTransaction(customerId, staffId, orderNumber);
             TransactionHeaderRepository.checkout(header);
         }
 

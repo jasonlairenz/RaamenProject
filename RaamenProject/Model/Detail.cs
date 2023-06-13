@@ -19,7 +19,6 @@ namespace RaamenProject.Model
         public int Cartid { get; set; }
         public int Quantity { get; set; }
     
-        public virtual Cart Cart { get; set; }
         public virtual Header Header { get; set; }
         public virtual Raman Raman { get; set; }
     }

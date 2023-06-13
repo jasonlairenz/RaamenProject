@@ -114,14 +114,17 @@
   <ItemGroup>
     <Compile Include="Controller\CartController.cs" />
     <Compile Include="Controller\RamenController.cs" />
+    <Compile Include="Controller\TransactionDetailController.cs" />
     <Compile Include="Controller\TransactionHeaderController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\RamenFactory.cs" />
+    <Compile Include="Factory\TransactionDetailFactory.cs" />
     <Compile Include="Factory\TransactionHeaderFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\CartHandler.cs" />
     <Compile Include="Handler\RamenHandler.cs" />
+    <Compile Include="Handler\TransactionDetailHandler.cs" />
     <Compile Include="Handler\TransactionHeaderHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Cart.cs">
@@ -151,6 +154,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Order.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Raman.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -163,6 +169,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CartRepository.cs" />
     <Compile Include="Repository\RamenRepository.cs" />
+    <Compile Include="Repository\TransactionDetailRepository.cs" />
     <Compile Include="Repository\TransactionHeaderRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="View\Ramen\addRamen.aspx.cs">

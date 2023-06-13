@@ -43,7 +43,8 @@ namespace RaamenProject.View.Transaction
 
         protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int id = int.Parse(Request.QueryString["UserId"]);
+            Response.Redirect("~/View/Transaction/TransactionDetail.aspx?HeaderId=");
         }
     }
 }

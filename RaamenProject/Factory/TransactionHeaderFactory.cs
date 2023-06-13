@@ -8,12 +8,13 @@ namespace RaamenProject.Factory
 {
     public class TransactionHeaderFactory
     {
-        public static Header createTransaction(int customerId, int staffId)
+        public static Header createTransaction(int customerId, int staffId, int orderId)
         {
             Header header = new Header();
             header.CustomerId = customerId;
             header.Staffid = 3;
             header.Date = DateTime.Now;
+            header.OrderId = orderId;
             return header;
         }
     }

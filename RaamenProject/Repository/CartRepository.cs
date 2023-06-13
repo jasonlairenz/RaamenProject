@@ -46,5 +46,18 @@ namespace RaamenProject.Repository
         {
             return db.Carts.Any(cart => cart.UserId == userId && cart.RamenId == ramenId);
         }
+
+        public static int getOrderNumber()
+        {
+            int orderNumber = (from data in db.Orders where data.OrderId == 1 select data.OrderNumber).FirstOrDefault();
+            return orderNumber;
+        }
+
+        public static void updateOrderId()
+        {
+            Order order = db.Orders.Find(1);
+            order.OrderNumber += 1;
+            db.SaveChanges();
+        }
     }
 }

@@ -12,15 +12,9 @@ namespace RaamenProject.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Cart
+    public partial class Order
     {
-        public int CartId { get; set; }
-        public int UserId { get; set; }
-        public int RamenId { get; set; }
-        public int Quantity { get; set; }
         public int OrderId { get; set; }
-    
-        public virtual Raman Raman { get; set; }
-        public virtual User User { get; set; }
+        public int OrderNumber { get; set; }
     }
 }
