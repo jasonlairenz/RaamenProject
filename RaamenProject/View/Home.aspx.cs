@@ -98,5 +98,10 @@ namespace RaamenProject.View
             int id = int.Parse(Request.QueryString["UserId"]);
             Response.Redirect("~/View/Transaction/History.aspx?UserId=" + id);
         }
+
+        protected void reportBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Transaction/Report.aspx");
+        }
     }
 }

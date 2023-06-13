@@ -15,7 +15,7 @@ namespace RaamenProject.Repository
             db.SaveChanges();
         }
 
-        public static List<Header> viewTransaction()
+        public  List<Header> viewTransaction()
         {
             return db.Headers.ToList();
         }
@@ -33,8 +33,6 @@ namespace RaamenProject.Repository
 
         public static void updateStatus(int headerId)
         {
-//            string status = (from data in db.Headers where data.id == headerId select data.Status).FirstOrDefault();
-//;           status = "Accepted";
             
             Header header = db.Headers.Find(headerId);
             header.Status = "Accepted";

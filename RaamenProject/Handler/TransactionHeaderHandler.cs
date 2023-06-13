@@ -18,7 +18,8 @@ namespace RaamenProject.Handler
 
         public static List<Header> viewTransaction()
         {
-            return TransactionHeaderRepository.viewTransaction();
+            TransactionHeaderRepository data = new TransactionHeaderRepository();
+            return data.viewTransaction();
         }
 
         public static List<Header> viewTransactionById(int UserId)
