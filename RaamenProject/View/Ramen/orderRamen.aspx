@@ -5,6 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="../AsetStyle/tableStyle.css" rel="stylesheet" />
+    <link href="orderRamenStyle.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -13,7 +15,7 @@
                 Order Ramen
             </h1>
             <h2>List Of Ramen</h2>
-            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand">
+            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand"  CssClass="gridview">
                 <Columns>
                     <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Order" ShowHeader="True" Text="Order" />
                 </Columns>
@@ -26,14 +28,14 @@
 
             <br />
             <h2>My Cart</h2>
-            <asp:GridView ID="GridView2" runat="server" OnRowDeleting="GridView2_RowDeleting1">
+            <asp:GridView ID="GridView2" runat="server" OnRowDeleting="GridView2_RowDeleting1"  CssClass="gridview">
                 <Columns>
                     <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="Delete" ShowHeader="True" Text="Delete" />
                 </Columns>
             </asp:GridView>
 
-            <asp:Button ID="clearCartBtn" runat="server" Text="Clear Cart" OnClick="clearCartBtn_Click" />
-            <asp:Button ID="buyBtn" runat="server" Text="Buy" OnClick="buyBtn_Click" />
+            <asp:Button CssClass="orderRamenBtn" ID="clearCartBtn" runat="server" Text="Clear Cart" OnClick="clearCartBtn_Click" />
+            <asp:Button CssClass="orderRamenBtn" ID="buyBtn" runat="server" Text="Buy" OnClick="buyBtn_Click" />
             <br />
             <asp:Label ID="statusLbl" runat="server" Text=""></asp:Label>
         </div>

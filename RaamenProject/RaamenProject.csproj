@@ -89,6 +89,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="View\AsetStyle\navbarStyle.css" />
+    <Content Include="View\AsetStyle\tableStyle.css" />
     <Content Include="View\Authentication\LoginStyle.css" />
     <Content Include="View\Authentication\RegisterStyle.css" />
     <Content Include="View\HomeStyle.css" />
@@ -102,6 +104,7 @@
     <Content Include="View\Home.aspx" />
     <Content Include="View\Ramen\orderRamen.aspx" />
     <Content Include="View\Ramen\addRamenStyle.css" />
+    <Content Include="View\Ramen\orderRamenStyle.css" />
     <Content Include="View\Ramen\updateRamen.aspx" />
     <Content Include="View\Ramen\updateRamenStyle.css" />
     <Content Include="View\Ramen\viewRamen.aspx" />
