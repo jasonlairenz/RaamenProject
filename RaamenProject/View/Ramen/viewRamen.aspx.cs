@@ -23,7 +23,7 @@ namespace RaamenProject.View.Ramen
                     // member
                     Response.Redirect("~/View/Home.aspx?UserId=" + UserId);
                 }
-                
+
 
                 GridView1.DataSource = RamenController.viewRamen();
                 GridView1.DataBind();

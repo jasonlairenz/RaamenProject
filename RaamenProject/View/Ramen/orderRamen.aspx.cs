@@ -42,7 +42,7 @@ namespace RaamenProject.View.Ramen
         {
             int rowIdx1 = Convert.ToInt32(e.CommandArgument);
             GridViewRow r1 = GridView1.Rows[rowIdx1];
-            String ramenId = r1.Cells[2].Text;
+            String ramenId = r1.Cells[1].Text;
 
             int RamenId = int.Parse(ramenId);
             int Quantity = int.Parse(quantityTxt.Text);
