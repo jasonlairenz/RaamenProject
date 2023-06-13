@@ -29,6 +29,11 @@ namespace RaamenProject.Controller
             CartHandler.deleteCartById(id);
         }
 
+        public static void deleteCartAll(int UserId)
+        {
+            CartHandler.deleteCartAll(UserId);
+        }
+
         public static bool CheckCartItemExists(int userId, int ramenId)
         {
             using (RaamenDatabaseEntities db = new RaamenDatabaseEntities())

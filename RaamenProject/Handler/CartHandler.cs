@@ -30,6 +30,12 @@ namespace RaamenProject.Handler
         {
            CartRepository.deleteCartById(id);
         }
+
+        public static void deleteCartAll(int UserId)
+        {
+            CartRepository.deleteCartAll(UserId);
+        }
+
         public static bool checkCart(int userId, int ramenId)
         {
             return CartRepository.checkCart(userId,ramenId);

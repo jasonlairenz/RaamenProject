@@ -29,17 +29,12 @@ namespace RaamenProject.Repository
             return db.Carts.ToList<Cart>();
         }
 
-        //public static void deleteCartAll(int id, int UserId, int RamenId)
-        //{
-        //    User user = db.Users.Find(id);
-
-        //    int cart = (from data in db.Carts where data.UserId.Equals(UserId) && data.RamenId.Equals(RamenId) select data.CartId).FirstOrDefault();
-
-        //    Cart cartId = db.Carts.Find(cart);
-
-        //    db.Carts.Remove(cartId);
-        //    db.SaveChanges();
-        //}
+        public static void deleteCartAll(int UserId)
+        {
+            var items = db.Carts.Where(cart => cart.UserId == UserId).ToList();
+            db.Carts.RemoveRange(items);
+            db.SaveChanges();
+        }
 
         public static void deleteCartById(int id)
         {

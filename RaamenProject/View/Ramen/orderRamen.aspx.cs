@@ -60,5 +60,13 @@ namespace RaamenProject.View.Ramen
 
             Response.Redirect("~/View/Ramen/orderRamen.aspx?UserId=" + UserId);
         }
+
+        protected void clearCartBtn_Click(object sender, EventArgs e)
+        {
+            int UserId = int.Parse(Request.QueryString["UserId"]);
+            CartController.deleteCartAll(UserId);
+
+            Response.Redirect("~/View/Ramen/orderRamen.aspx?UserId=" + UserId);
+        }
     }
 }
