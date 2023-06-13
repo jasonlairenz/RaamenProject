@@ -14,12 +14,6 @@ namespace RaamenProject.Model
     
     public partial class Cart
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cart()
-        {
-            this.Details = new HashSet<Detail>();
-        }
-    
         public int CartId { get; set; }
         public int UserId { get; set; }
         public int RamenId { get; set; }
@@ -28,7 +22,5 @@ namespace RaamenProject.Model
     
         public virtual Raman Raman { get; set; }
         public virtual User User { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Detail> Details { get; set; }
     }
 }

@@ -9,10 +9,10 @@ namespace RaamenProject.Controller
 {
     public class TransactionHeaderController
     {
-        public static String checkout(int customerId, int staffId, int orderNumber)
+        public static String checkout(int customerId, int staffId, int orderNumber, String status)
         {
 
-            TransactionHeaderHandler.checkout(customerId, staffId, orderNumber);
+            TransactionHeaderHandler.checkout(customerId, staffId, orderNumber, status);
 
             return "Success";
         }

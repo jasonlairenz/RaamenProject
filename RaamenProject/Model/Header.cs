@@ -14,20 +14,13 @@ namespace RaamenProject.Model
     
     public partial class Header
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Header()
-        {
-            this.Details = new HashSet<Detail>();
-        }
-    
         public int id { get; set; }
         public int CustomerId { get; set; }
         public int Staffid { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public Nullable<int> OrderId { get; set; }
+        public string Status { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Detail> Details { get; set; }
         public virtual User User { get; set; }
     }
 }

@@ -30,5 +30,15 @@ namespace RaamenProject.Repository
             int headerId = (from data in db.Headers where data.OrderId == orderId select data.id).FirstOrDefault();
             return headerId;
         }
+
+        public static void updateStatus(int headerId)
+        {
+//            string status = (from data in db.Headers where data.id == headerId select data.Status).FirstOrDefault();
+//;           status = "Accepted";
+            
+            Header header = db.Headers.Find(headerId);
+            header.Status = "Accepted";
+            db.SaveChanges();
+        }
     }
 }

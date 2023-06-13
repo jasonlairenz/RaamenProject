@@ -77,7 +77,8 @@ namespace RaamenProject.View.Ramen
             int staffId = 3;
             int UserId = int.Parse(Request.QueryString["UserId"]);
             int orderId = CartController.getOrderNumber();
-            statusLbl.Text = TransactionHeaderController.checkout(UserId, staffId, orderId );
+            String status = "Pending";
+            statusLbl.Text = TransactionHeaderController.checkout(UserId, staffId, orderId, status );
             
 
             int headerId = TransactionHeaderRepository.findHeaderId(orderId);
