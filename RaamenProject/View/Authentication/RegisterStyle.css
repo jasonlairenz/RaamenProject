@@ -59,7 +59,7 @@ input[type="password"] {
 }
 
 #registerBtn {
-    margin-top:10px;
+    margin-top: 10px;
     background-color: cornflowerblue;
     color: white;
     padding: 10px;
@@ -71,6 +71,7 @@ input[type="password"] {
     font-size: medium;
     margin-left: 75px;
     border-radius: 10px;
+    transition: background-color 0.5s;
 }
 
 

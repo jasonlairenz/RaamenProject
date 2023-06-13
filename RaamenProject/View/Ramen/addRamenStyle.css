@@ -60,6 +60,7 @@ input[type="number"] {
     font-size: medium;
     margin-left: 70px;
     border-radius: 10px;
+    transition: background-color 0.5s;
 }
 
 #submitBtn:hover {

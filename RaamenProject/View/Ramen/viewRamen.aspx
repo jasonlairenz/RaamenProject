@@ -6,6 +6,7 @@
 <head runat="server">
     <title></title>
     <link href="viewRamenStyle.css" rel="stylesheet" />
+    <link href="../AsetStyle/tableStyle.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">

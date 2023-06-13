@@ -24,32 +24,6 @@ h1 {
     
 }
 
-.gridview {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.gridview th, .gridview td {
-    padding: 8px;
-    border: 1px solid #ccc;
-}
-
-.gridview th {
-    background-color: cornflowerblue;
-}
-
-.gridview tr:nth-child(even) {
-    background-color: aliceblue;
-}
-
-.gridview tr:hover {
-    background-color: #eaeaea;
-}
-
-.gridview .gridview-emptydatarow {
-    font-style: italic;
-    text-align: center;
-}
 
 #addBtn {
     background-color: cornflowerblue;
@@ -60,5 +34,10 @@ h1 {
     display: flex;
     font-size: medium;
     border-radius: 2px;
-    margin-top:10px;
+    margin-top: 10px;
+    transition: background-color 0.5s;
+}
+
+#addBtn:hover {
+    background-color: darkblue;
 }

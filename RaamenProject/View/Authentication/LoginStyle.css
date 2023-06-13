@@ -46,6 +46,7 @@ input[type="password"] {
 }
 
 #loginBtn {
+    margin-top: 10px;
     background-color: cornflowerblue;
     color: white;
     padding: 10px;
@@ -54,23 +55,11 @@ input[type="password"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size:medium;
-    margin-left: 100px;
-    border-radius: 10px;
-}
-
-#registerBtn {
-    background-color: cornflowerblue;
-    color: white;
-    padding: 7px;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: medium;
+    margin-left: 75px;
+    border-radius: 10px;
+    transition: background-color 0.5s;
 }
-
 
 #loginBtn:hover{
     background-color: darkblue;
