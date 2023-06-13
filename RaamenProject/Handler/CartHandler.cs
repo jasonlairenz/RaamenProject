@@ -46,5 +46,10 @@ namespace RaamenProject.Handler
             return CartRepository.getOrderNumber();
         }
 
+        public static void updateOrderNumber()
+        {
+            CartRepository.updateOrderNumber();
+        }
+
     }
 }

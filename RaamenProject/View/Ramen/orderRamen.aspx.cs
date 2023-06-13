@@ -79,7 +79,7 @@ namespace RaamenProject.View.Ramen
             int orderId = CartController.getOrderNumber();
             statusLbl.Text = TransactionHeaderController.checkout(UserId, staffId, orderId );
             CartController.deleteCartAll(UserId);
-            CartRepository.updateOrderId();
+            CartController.updateOrderNumber();
             if (statusLbl.Text.Equals("Success"))
             { 
                 Response.Redirect("~/View/Transaction/History.aspx?UserId=" + UserId);

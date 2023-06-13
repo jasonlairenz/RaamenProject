@@ -52,5 +52,10 @@ namespace RaamenProject.Controller
             return CartHandler.getOrderNumber();
         }
 
+        public static void updateOrderNumber()
+        {
+            CartHandler.updateOrderNumber();
+        }
+
     }
 }

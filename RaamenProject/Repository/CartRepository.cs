@@ -53,7 +53,7 @@ namespace RaamenProject.Repository
             return orderNumber;
         }
 
-        public static void updateOrderId()
+        public static void updateOrderNumber()
         {
             Order order = db.Orders.Find(1);
             order.OrderNumber += 1;
