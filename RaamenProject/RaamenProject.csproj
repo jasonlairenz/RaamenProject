@@ -1255,10 +1255,10 @@
     <Compile Include="Controller\TransactionDetailController.cs" />
     <Compile Include="Controller\TransactionHeaderController.cs" />
     <Compile Include="Controller\UserController.cs" />
-    <Compile Include="Dataset\TransactionData.Designer.cs">
+    <Compile Include="Dataset\TransactionDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TransactionData.xsd</DependentUpon>
+      <DependentUpon>TransactionDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Factory\CartFactory.cs" />
     <Compile Include="Factory\RamenFactory.cs" />
@@ -1421,16 +1421,16 @@
     <Content Include="Model\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-    <Content Include="Dataset\TransactionData.xsc">
-      <DependentUpon>TransactionData.xsd</DependentUpon>
+    <Content Include="Dataset\TransactionDataSet.xsc">
+      <DependentUpon>TransactionDataSet.xsd</DependentUpon>
     </Content>
-    <None Include="Dataset\TransactionData.xsd">
+    <None Include="Dataset\TransactionDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TransactionData.Designer.cs</LastGenOutput>
+      <LastGenOutput>TransactionDataSet.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Dataset\TransactionData.xss">
-      <DependentUpon>TransactionData.xsd</DependentUpon>
+    <Content Include="Dataset\TransactionDataSet.xss">
+      <DependentUpon>TransactionDataSet.xsd</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">

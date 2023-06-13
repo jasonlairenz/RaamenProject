@@ -17,14 +17,14 @@ namespace RaamenProject.View.Transaction
             TransactionReport Report = new TransactionReport();
             CrystalReportViewer1.ReportSource = Report;
 
-            TransactionData Data = GetTransaction(TransactionHeaderController.viewTransaction());
+            TransactionDataSet Data = GetTransaction(TransactionHeaderController.listViewTransaction());
             Report.SetDataSource(Data);
             
         }
 
-        private TransactionData GetTransaction(List<Header> header)
+        private TransactionDataSet GetTransaction(List<Header> header)
         {
-            TransactionData Data = new TransactionData();
+            TransactionDataSet Data = new TransactionDataSet();
             var Table_Header = Data.Header;
             var Table_Detail = Data.Detail;
 
@@ -35,16 +35,23 @@ namespace RaamenProject.View.Transaction
                 Header_Row["CustomerId"] = i.CustomerId;
                 Header_Row["Date"] = i.Date;
                 Header_Row["Status"] = i.Status;
-                Table_Header.Rows.Add(Header_Row);
+                
 
-                //foreach (Detail td in i)
-                //{
-                //    var Detail_Row = Table_Detail.NewRow();
-                //    Detail_Row["HeaderId"] = td.Headerid;
-                //    Detail_Row["RamenId"] = td.Ramenid;
-                //    Detail_Row["Quantity"] = td.Quantity;
-                //    Table_Detail.Rows.Add(Detail_Row);
-                //}
+                int total = 0;
+
+                foreach (Detail td in TransactionDetailController.listViewDetailById(i.id))
+                {
+                    var Detail_Row = Table_Detail.NewRow();
+                    Detail_Row["HeaderId"] = td.Headerid;
+                    Detail_Row["RamenId"] = td.Ramenid;
+                    Detail_Row["Quantity"] = td.Quantity;
+                    Detail_Row["RamenName"] = RamenController.viewRamenById(td.Ramenid).Name;
+                    Detail_Row["RamenPrice"] = RamenController.viewRamenById(td.Ramenid).Price;
+                    total += int.Parse(RamenController.viewRamenById(td.Ramenid).Price) * td.Quantity;
+                    Table_Detail.Rows.Add(Detail_Row);
+                }
+                Header_Row["Total"] = total;
+                Table_Header.Rows.Add(Header_Row);
             }
             return Data;
         }

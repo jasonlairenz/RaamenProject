@@ -19,7 +19,12 @@ namespace RaamenProject.Controller
             CartHandler.updateCart(CartId, UserId, RamenId, Quantity);
         }
 
-        public static List<Cart> viewCart(int UserId)
+        public static List<Cart> listViewCart(int UserId)
+        {
+            return CartHandler.listViewCart(UserId);
+        }
+
+        public static dynamic viewCart(int UserId)
         {
             return CartHandler.viewCart(UserId);
         }

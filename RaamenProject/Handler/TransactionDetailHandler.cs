@@ -16,7 +16,12 @@ namespace RaamenProject.Handler
             TransactionDetailRepository.addDetail(detail);
         }
 
-        public static List<Detail> viewDetailById(int id)
+        public static List<Detail> listViewDetailById(int id)
+        {
+            return TransactionDetailRepository.listViewDetailById(id);
+        }
+
+        public static dynamic viewDetailById(int id)
         {
             return TransactionDetailRepository.viewDetailById(id);
         }

@@ -24,9 +24,22 @@ namespace RaamenProject.Repository
             db.SaveChanges();
         }
 
-        public static List<Cart> viewCart(int UserId)
+        public static List<Cart> listViewCart(int UserId)
         {
             return db.Carts.Where(cart => cart.UserId == UserId).ToList();
+        }
+
+        public static dynamic viewCart(int UserId)
+        {
+            return db.Carts.Join(db.Ramen, cart => cart.RamenId, ramen => ramen.id, (cart,ramen) => new
+            {
+                UserId = cart.UserId,
+                RamenName = ramen.Name,
+                RamenMeat = ramen.Meatid,
+                RamenBroth = ramen.Borth,
+                RamenPrice = ramen.Price,
+                Quantity = cart.Quantity,
+            }).Where(cart => cart.UserId == UserId).ToList();
         }
 
         public static void deleteCartAll(int UserId)

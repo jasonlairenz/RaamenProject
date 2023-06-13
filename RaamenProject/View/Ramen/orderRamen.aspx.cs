@@ -20,7 +20,7 @@ namespace RaamenProject.View.Ramen
                 GridView1.DataBind();
 
                 int UserId = int.Parse(Request.QueryString["UserId"]);
-                GridView2.DataSource = CartController.viewCart(UserId);
+                GridView2.DataSource = CartController.listViewCart(UserId);
                 GridView2.DataBind();
             }
         }

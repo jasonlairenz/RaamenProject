@@ -17,12 +17,22 @@ namespace RaamenProject.Controller
             return "Success";
         }
 
-        public static List<Header> viewTransaction()
+        public static List<Header> listViewTransaction()
+        {
+            return TransactionHeaderHandler.listViewTransaction();
+        }
+
+        public static dynamic viewTransaction()
         {
             return TransactionHeaderHandler.viewTransaction();
         }
 
-        public static List<Header> viewTransactionById(int UserId)
+        public static List<Header> listViewTransactionById(int UserId)
+        {
+            return TransactionHeaderHandler.listViewTransactionById(UserId);
+        }
+
+        public static dynamic viewTransactionById(int UserId)
         {
             return TransactionHeaderHandler.viewTransactionById(UserId);
         }

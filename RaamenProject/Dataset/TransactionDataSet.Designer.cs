@@ -20,25 +20,21 @@ namespace RaamenProject.Dataset {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("TransactionData")]
+    [global::System.Xml.Serialization.XmlRootAttribute("TransactionDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class TransactionData : global::System.Data.DataSet {
+    public partial class TransactionDataSet : global::System.Data.DataSet {
         
         private HeaderDataTable tableHeader;
         
         private DetailDataTable tableDetail;
         
-        private RamenDataTable tableRamen;
-        
-        private global::System.Data.DataRelation relationDetail_Header;
-        
-        private global::System.Data.DataRelation relationDetail_Ramen;
+        private global::System.Data.DataRelation relationHeader_Detail;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public TransactionData() {
+        public TransactionDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -49,7 +45,7 @@ namespace RaamenProject.Dataset {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected TransactionData(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected TransactionDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -67,9 +63,6 @@ namespace RaamenProject.Dataset {
                 }
                 if ((ds.Tables["Detail"] != null)) {
                     base.Tables.Add(new DetailDataTable(ds.Tables["Detail"]));
-                }
-                if ((ds.Tables["Ramen"] != null)) {
-                    base.Tables.Add(new RamenDataTable(ds.Tables["Ramen"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -106,16 +99,6 @@ namespace RaamenProject.Dataset {
         public DetailDataTable Detail {
             get {
                 return this.tableDetail;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public RamenDataTable Ramen {
-            get {
-                return this.tableRamen;
             }
         }
         
@@ -161,7 +144,7 @@ namespace RaamenProject.Dataset {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            TransactionData cln = ((TransactionData)(base.Clone()));
+            TransactionDataSet cln = ((TransactionDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -191,9 +174,6 @@ namespace RaamenProject.Dataset {
                 }
                 if ((ds.Tables["Detail"] != null)) {
                     base.Tables.Add(new DetailDataTable(ds.Tables["Detail"]));
-                }
-                if ((ds.Tables["Ramen"] != null)) {
-                    base.Tables.Add(new RamenDataTable(ds.Tables["Ramen"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -240,38 +220,25 @@ namespace RaamenProject.Dataset {
                     this.tableDetail.InitVars();
                 }
             }
-            this.tableRamen = ((RamenDataTable)(base.Tables["Ramen"]));
-            if ((initTable == true)) {
-                if ((this.tableRamen != null)) {
-                    this.tableRamen.InitVars();
-                }
-            }
-            this.relationDetail_Header = this.Relations["Detail_Header"];
-            this.relationDetail_Ramen = this.Relations["Detail_Ramen"];
+            this.relationHeader_Detail = this.Relations["Header_Detail"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "TransactionData";
+            this.DataSetName = "TransactionDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/TransactionData.xsd";
+            this.Namespace = "http://tempuri.org/TransactionDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableHeader = new HeaderDataTable();
             base.Tables.Add(this.tableHeader);
             this.tableDetail = new DetailDataTable();
             base.Tables.Add(this.tableDetail);
-            this.tableRamen = new RamenDataTable();
-            base.Tables.Add(this.tableRamen);
-            this.relationDetail_Header = new global::System.Data.DataRelation("Detail_Header", new global::System.Data.DataColumn[] {
-                        this.tableDetail.HeaderIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHeader.idColumn}, false);
-            this.Relations.Add(this.relationDetail_Header);
-            this.relationDetail_Ramen = new global::System.Data.DataRelation("Detail_Ramen", new global::System.Data.DataColumn[] {
-                        this.tableDetail.RamenIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRamen.idColumn}, false);
-            this.Relations.Add(this.relationDetail_Ramen);
+            this.relationHeader_Detail = new global::System.Data.DataRelation("Header_Detail", new global::System.Data.DataColumn[] {
+                        this.tableHeader.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDetail.HeaderIdColumn}, false);
+            this.Relations.Add(this.relationHeader_Detail);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -288,12 +255,6 @@ namespace RaamenProject.Dataset {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeRamen() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -303,7 +264,7 @@ namespace RaamenProject.Dataset {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            TransactionData ds = new TransactionData();
+            TransactionDataSet ds = new TransactionDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -353,9 +314,6 @@ namespace RaamenProject.Dataset {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void DetailRowChangeEventHandler(object sender, DetailRowChangeEvent e);
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void RamenRowChangeEventHandler(object sender, RamenRowChangeEvent e);
-        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -370,6 +328,8 @@ namespace RaamenProject.Dataset {
             private global::System.Data.DataColumn columnDate;
             
             private global::System.Data.DataColumn columnStatus;
+            
+            private global::System.Data.DataColumn columnTotal;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -438,6 +398,14 @@ namespace RaamenProject.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TotalColumn {
+                get {
+                    return this.columnTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -473,16 +441,14 @@ namespace RaamenProject.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HeaderRow AddHeaderRow(DetailRow parentDetailRowByDetail_Header, string CustomerId, string Date, string Status) {
+            public HeaderRow AddHeaderRow(string id, string CustomerId, string Date, string Status, string Total) {
                 HeaderRow rowHeaderRow = ((HeaderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        id,
                         CustomerId,
                         Date,
-                        Status};
-                if ((parentDetailRowByDetail_Header != null)) {
-                    columnValuesArray[0] = parentDetailRowByDetail_Header[0];
-                }
+                        Status,
+                        Total};
                 rowHeaderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHeaderRow);
                 return rowHeaderRow;
@@ -509,6 +475,7 @@ namespace RaamenProject.Dataset {
                 this.columnCustomerId = base.Columns["CustomerId"];
                 this.columnDate = base.Columns["Date"];
                 this.columnStatus = base.Columns["Status"];
+                this.columnTotal = base.Columns["Total"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -522,6 +489,8 @@ namespace RaamenProject.Dataset {
                 base.Columns.Add(this.columnDate);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -589,7 +558,7 @@ namespace RaamenProject.Dataset {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TransactionData ds = new TransactionData();
+                TransactionDataSet ds = new TransactionDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -661,6 +630,10 @@ namespace RaamenProject.Dataset {
             
             private global::System.Data.DataColumn columnQuantity;
             
+            private global::System.Data.DataColumn columnRamenName;
+            
+            private global::System.Data.DataColumn columnRamenPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DetailDataTable() {
@@ -720,6 +693,22 @@ namespace RaamenProject.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RamenNameColumn {
+                get {
+                    return this.columnRamenName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn RamenPriceColumn {
+                get {
+                    return this.columnRamenPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -755,12 +744,17 @@ namespace RaamenProject.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DetailRow AddDetailRow(string HeaderId, string RamenId, string Quantity) {
+            public DetailRow AddDetailRow(HeaderRow parentHeaderRowByHeader_Detail, string RamenId, string Quantity, string RamenName, string RamenPrice) {
                 DetailRow rowDetailRow = ((DetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        HeaderId,
+                        null,
                         RamenId,
-                        Quantity};
+                        Quantity,
+                        RamenName,
+                        RamenPrice};
+                if ((parentHeaderRowByHeader_Detail != null)) {
+                    columnValuesArray[0] = parentHeaderRowByHeader_Detail[0];
+                }
                 rowDetailRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDetailRow);
                 return rowDetailRow;
@@ -786,6 +780,8 @@ namespace RaamenProject.Dataset {
                 this.columnHeaderId = base.Columns["HeaderId"];
                 this.columnRamenId = base.Columns["RamenId"];
                 this.columnQuantity = base.Columns["Quantity"];
+                this.columnRamenName = base.Columns["RamenName"];
+                this.columnRamenPrice = base.Columns["RamenPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -797,6 +793,10 @@ namespace RaamenProject.Dataset {
                 base.Columns.Add(this.columnRamenId);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
+                this.columnRamenName = new global::System.Data.DataColumn("RamenName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRamenName);
+                this.columnRamenPrice = new global::System.Data.DataColumn("RamenPrice", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRamenPrice);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -864,7 +864,7 @@ namespace RaamenProject.Dataset {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TransactionData ds = new TransactionData();
+                TransactionDataSet ds = new TransactionDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -883,284 +883,6 @@ namespace RaamenProject.Dataset {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "DetailDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class RamenDataTable : global::System.Data.TypedTableBase<RamenRow> {
-            
-            private global::System.Data.DataColumn columnid;
-            
-            private global::System.Data.DataColumn columnName;
-            
-            private global::System.Data.DataColumn columnPrice;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RamenDataTable() {
-                this.TableName = "Ramen";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal RamenDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected RamenDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
-                get {
-                    return this.columnName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PriceColumn {
-                get {
-                    return this.columnPrice;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RamenRow this[int index] {
-                get {
-                    return ((RamenRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RamenRowChangeEventHandler RamenRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RamenRowChangeEventHandler RamenRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RamenRowChangeEventHandler RamenRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event RamenRowChangeEventHandler RamenRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddRamenRow(RamenRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RamenRow AddRamenRow(DetailRow parentDetailRowByDetail_Ramen, string Name, string Price) {
-                RamenRow rowRamenRow = ((RamenRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        Name,
-                        Price};
-                if ((parentDetailRowByDetail_Ramen != null)) {
-                    columnValuesArray[0] = parentDetailRowByDetail_Ramen[1];
-                }
-                rowRamenRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowRamenRow);
-                return rowRamenRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                RamenDataTable cln = ((RamenDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new RamenDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnid = base.Columns["id"];
-                this.columnName = base.Columns["Name"];
-                this.columnPrice = base.Columns["Price"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
-                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrice);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RamenRow NewRamenRow() {
-                return ((RamenRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new RamenRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(RamenRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.RamenRowChanged != null)) {
-                    this.RamenRowChanged(this, new RamenRowChangeEvent(((RamenRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.RamenRowChanging != null)) {
-                    this.RamenRowChanging(this, new RamenRowChangeEvent(((RamenRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.RamenRowDeleted != null)) {
-                    this.RamenRowDeleted(this, new RamenRowChangeEvent(((RamenRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.RamenRowDeleting != null)) {
-                    this.RamenRowDeleting(this, new RamenRowChangeEvent(((RamenRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveRamenRow(RamenRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TransactionData ds = new TransactionData();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "RamenDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1281,12 +1003,17 @@ namespace RaamenProject.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DetailRow DetailRow {
+            public string Total {
                 get {
-                    return ((DetailRow)(this.GetParentRow(this.Table.ParentRelations["Detail_Header"])));
+                    try {
+                        return ((string)(this[this.tableHeader.TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total\' in table \'Header\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Detail_Header"]);
+                    this[this.tableHeader.TotalColumn] = value;
                 }
             }
             
@@ -1336,6 +1063,29 @@ namespace RaamenProject.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetStatusNull() {
                 this[this.tableHeader.StatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTotalNull() {
+                return this.IsNull(this.tableHeader.TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTotalNull() {
+                this[this.tableHeader.TotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DetailRow[] GetDetailRows() {
+                if ((this.Table.ChildRelations["Header_Detail"] == null)) {
+                    return new DetailRow[0];
+                }
+                else {
+                    return ((DetailRow[])(base.GetChildRows(this.Table.ChildRelations["Header_Detail"])));
+                }
             }
         }
         
@@ -1403,6 +1153,49 @@ namespace RaamenProject.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string RamenName {
+                get {
+                    try {
+                        return ((string)(this[this.tableDetail.RamenNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RamenName\' in table \'Detail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetail.RamenNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string RamenPrice {
+                get {
+                    try {
+                        return ((string)(this[this.tableDetail.RamenPriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RamenPrice\' in table \'Detail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetail.RamenPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public HeaderRow HeaderRow {
+                get {
+                    return ((HeaderRow)(this.GetParentRow(this.Table.ParentRelations["Header_Detail"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Header_Detail"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsHeaderIdNull() {
                 return this.IsNull(this.tableDetail.HeaderIdColumn);
             }
@@ -1439,134 +1232,26 @@ namespace RaamenProject.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HeaderRow[] GetHeaderRows() {
-                if ((this.Table.ChildRelations["Detail_Header"] == null)) {
-                    return new HeaderRow[0];
-                }
-                else {
-                    return ((HeaderRow[])(base.GetChildRows(this.Table.ChildRelations["Detail_Header"])));
-                }
+            public bool IsRamenNameNull() {
+                return this.IsNull(this.tableDetail.RamenNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RamenRow[] GetRamenRows() {
-                if ((this.Table.ChildRelations["Detail_Ramen"] == null)) {
-                    return new RamenRow[0];
-                }
-                else {
-                    return ((RamenRow[])(base.GetChildRows(this.Table.ChildRelations["Detail_Ramen"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class RamenRow : global::System.Data.DataRow {
-            
-            private RamenDataTable tableRamen;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal RamenRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableRamen = ((RamenDataTable)(this.Table));
+            public void SetRamenNameNull() {
+                this[this.tableDetail.RamenNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string id {
-                get {
-                    try {
-                        return ((string)(this[this.tableRamen.idColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id\' in table \'Ramen\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRamen.idColumn] = value;
-                }
+            public bool IsRamenPriceNull() {
+                return this.IsNull(this.tableDetail.RamenPriceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Name {
-                get {
-                    try {
-                        return ((string)(this[this.tableRamen.NameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'Ramen\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRamen.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Price {
-                get {
-                    try {
-                        return ((string)(this[this.tableRamen.PriceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Price\' in table \'Ramen\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRamen.PriceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DetailRow DetailRow {
-                get {
-                    return ((DetailRow)(this.GetParentRow(this.Table.ParentRelations["Detail_Ramen"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Detail_Ramen"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsidNull() {
-                return this.IsNull(this.tableRamen.idColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetidNull() {
-                this[this.tableRamen.idColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNameNull() {
-                return this.IsNull(this.tableRamen.NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNameNull() {
-                this[this.tableRamen.NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPriceNull() {
-                return this.IsNull(this.tableRamen.PriceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPriceNull() {
-                this[this.tableRamen.PriceColumn] = global::System.Convert.DBNull;
+            public void SetRamenPriceNull() {
+                this[this.tableDetail.RamenPriceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1624,40 +1309,6 @@ namespace RaamenProject.Dataset {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DetailRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class RamenRowChangeEvent : global::System.EventArgs {
-            
-            private RamenRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RamenRowChangeEvent(RamenRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RamenRow Row {
                 get {
                     return this.eventRow;
                 }

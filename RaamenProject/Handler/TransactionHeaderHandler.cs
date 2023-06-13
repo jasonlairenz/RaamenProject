@@ -16,13 +16,22 @@ namespace RaamenProject.Handler
             TransactionHeaderRepository.checkout(header);
         }
 
-        public static List<Header> viewTransaction()
+        public static List<Header> listViewTransaction()
         {
-            TransactionHeaderRepository data = new TransactionHeaderRepository();
-            return data.viewTransaction();
+            return TransactionHeaderRepository.listViewTransaction();
         }
 
-        public static List<Header> viewTransactionById(int UserId)
+        public static dynamic viewTransaction()
+        {
+            return TransactionHeaderRepository.viewTransaction();
+        }
+
+        public static List<Header> listViewTransactionById(int UserId)
+        {
+            return TransactionHeaderRepository.listViewTransactionById(UserId);
+        }
+
+        public static dynamic viewTransactionById(int UserId)
         {
             return TransactionHeaderRepository.viewTransactionById(UserId);
         }
