@@ -25,33 +25,33 @@ namespace RaamenProject.View.Transaction
         private TransactionDataSet GetTransaction(List<Header> header)
         {
             TransactionDataSet Data = new TransactionDataSet();
-            var Table_Header = Data.Header;
-            var Table_Detail = Data.Detail;
+            var THeader = Data.Header;
+            var TDetail = Data.Detail;
 
             foreach (Header i in header)
             {
-                var Header_Row = Table_Header.NewRow();
-                Header_Row["id"] = i.id;
-                Header_Row["CustomerId"] = i.CustomerId;
-                Header_Row["Date"] = i.Date;
-                Header_Row["Status"] = i.Status;
+                var HRow = THeader.NewRow();
+                HRow["id"] = i.id;
+                HRow["CustomerId"] = i.CustomerId;
+                HRow["Date"] = i.Date;
+                HRow["Status"] = i.Status;
                 
 
                 int total = 0;
 
                 foreach (Detail td in TransactionDetailController.listViewDetailById(i.id))
                 {
-                    var Detail_Row = Table_Detail.NewRow();
-                    Detail_Row["HeaderId"] = td.Headerid;
-                    Detail_Row["RamenId"] = td.Ramenid;
-                    Detail_Row["Quantity"] = td.Quantity;
-                    Detail_Row["RamenName"] = RamenController.viewRamenById(td.Ramenid).Name;
-                    Detail_Row["RamenPrice"] = RamenController.viewRamenById(td.Ramenid).Price;
+                    var DRow = TDetail.NewRow();
+                    DRow["HeaderId"] = td.Headerid;
+                    DRow["RamenId"] = td.Ramenid;
+                    DRow["Quantity"] = td.Quantity;
+                    DRow["RamenName"] = RamenController.viewRamenById(td.Ramenid).Name;
+                    DRow["RamenPrice"] = RamenController.viewRamenById(td.Ramenid).Price;
                     total += int.Parse(RamenController.viewRamenById(td.Ramenid).Price) * td.Quantity;
-                    Table_Detail.Rows.Add(Detail_Row);
+                    TDetail.Rows.Add(DRow);
                 }
-                Header_Row["Total"] = total;
-                Table_Header.Rows.Add(Header_Row);
+                HRow["Total"] = total;
+                THeader.Rows.Add(HRow);
             }
             return Data;
         }
