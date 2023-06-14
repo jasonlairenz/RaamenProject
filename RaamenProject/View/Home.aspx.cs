@@ -22,12 +22,13 @@ namespace RaamenProject.View
                 if (u.Roleid == 1)
                 {
                     // member
-                    roleLbl.Text = "Member";
+                    roleLbl.Text = "Role: Member"; 
+                    nameLbl.Text = "Hello, " + u.Username;
                 }
                 else if (u.Roleid == 2)
                 {
                     // admin
-                    roleLbl.Text = "Admin";
+                    roleLbl2.Text = "Role: Admin";
                     GridViewStaff.DataSource = UserController.viewStaff();
                     GridViewStaff.DataBind();
 
@@ -37,7 +38,7 @@ namespace RaamenProject.View
                 else if (u.Roleid == 3)
                 {
                     // staff
-                    roleLbl.Text = "Staff";
+                    roleLbl3.Text = "Role: Staff";
                     GridViewMember.DataSource = UserController.viewMember();
                     GridViewMember.DataBind();
                 }

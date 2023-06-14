@@ -49,10 +49,12 @@
                 <%if (getUserRole() == 1) { %>
                     <br />
                     <h1>Welcome, Member!</h1><br />
+                    <asp:Label ID="nameLbl" runat="server" Text=""></asp:Label><br />
                     <asp:Label ID="roleLbl" runat="server" Text=""></asp:Label><br />
 
                 <% } else if(getUserRole() == 2){ %>
                     <h1>Welcome, Admin!</h1><br />
+                    <asp:Label ID="roleLbl2" runat="server" Text=""></asp:Label><br />
 
                     <h1>Member</h1><br />
                     <asp:GridView CssClass="gridview" ID="GridViewMemberr" runat="server"></asp:GridView>
@@ -62,6 +64,7 @@
 
                 <% } else if(getUserRole() == 3){ %>
                     <h1>Welcome, Staff!</h1><br />
+                    <asp:Label ID="roleLbl3" runat="server" Text=""></asp:Label><br />
 
                     <h1>Member</h1><br />
                     <asp:GridView CssClass="gridview" ID="GridViewMember" runat="server"></asp:GridView>

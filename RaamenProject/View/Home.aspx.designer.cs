@@ -123,6 +123,15 @@ namespace RaamenProject.View
         protected global::System.Web.UI.WebControls.Button logoutBtn;
 
         /// <summary>
+        /// nameLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nameLbl;
+
+        /// <summary>
         /// roleLbl control.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace RaamenProject.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label roleLbl;
+
+        /// <summary>
+        /// roleLbl2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label roleLbl2;
 
         /// <summary>
         /// GridViewMemberr control.
@@ -148,6 +166,15 @@ namespace RaamenProject.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewStaff;
+
+        /// <summary>
+        /// roleLbl3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label roleLbl3;
 
         /// <summary>
         /// GridViewMember control.

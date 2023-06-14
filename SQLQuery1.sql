@@ -63,3 +63,15 @@ CREATE TABLE [dbo].[Order] (
     [OrderNumber] INT NOT NULL,
     PRIMARY KEY CLUSTERED ([OrderId] ASC)
 );
+
+INSERT INTO [Role]( [name]) VALUES ('member'), ('admin'), ('staff')
+
+INSERT INTO [User](Roleid, Username, Email, Gender, [Password]) 
+VALUES ('1','member','member@gmail.com','Male','aaa'),
+ ('2','admin','admin@gmail.com','Male','aaa'),  
+ ('3','staff','staff@gmail.com','Male','aaa')
+
+
+INSERT INTO [Order](OrderNumber) VALUES ('1')
+
+INSERT INTO [Meat]( [name]) VALUES ('chicken'), ('beef'), ('pork')
