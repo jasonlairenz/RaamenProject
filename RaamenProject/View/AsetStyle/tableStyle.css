@@ -1,6 +1,7 @@
 ﻿.gridview {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom:10px;
 }
 
     .gridview th, .gridview td {

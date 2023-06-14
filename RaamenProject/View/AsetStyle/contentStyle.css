@@ -21,13 +21,13 @@
     margin: 0;
 }
 
-h1 {
+h1, h2 {
     color: cornflowerblue;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top:20px;
-    margin-bottom:0px;
+    margin-bottom:10px;
 
 }
 
@@ -41,12 +41,24 @@ input[type="number"] {
     align-items: center;
 }
 
+#Label1{
+    margin-top:10px;
+}
+
 #statusLbl,
 #infoLbl {
     color: red;
     font-weight: bold;
     margin-bottom: 5px;
 }
+
+.ddl {
+    display: flex;
+    border: none;
+    width: 50px;
+}
+
+
 
 .contentBtn {
     background-color: cornflowerblue;
@@ -58,7 +70,8 @@ input[type="number"] {
     justify-content: center;
     align-items: center;
     font-size: medium;
-    margin-left: 70px;
+    
     border-radius: 10px;
     transition: background-color 0.5s;
+    margin-top: 10px;
 }
