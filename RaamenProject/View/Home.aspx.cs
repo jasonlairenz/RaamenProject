@@ -44,17 +44,19 @@ namespace RaamenProject.View
             }
         }
 
-        public int getUserRole()
-        {
-            int id = int.Parse(Request.QueryString["UserId"]);
-            User u = UserController.viewUserById(id);
-            return u.Roleid;
-        }
+        
 
         public User getStaffData()
         {
             User u = UserController.viewUserById(2);
             return u;
+        }
+
+        public int getUserRole()
+        {
+            int id = int.Parse(Request.QueryString["UserId"]);
+            User u = UserController.viewUserById(id);
+            return u.Roleid;
         }
 
         protected void logoutBtn_Click(object sender, EventArgs e)
@@ -107,6 +109,14 @@ namespace RaamenProject.View
         {
             int id = int.Parse(Request.QueryString["UserId"]);
             Response.Redirect("~/View/Transaction/Report.aspx?UserId="+id);
+        }
+
+        
+
+        protected void homeBtn_Click1(object sender, EventArgs e)
+        {
+            int id = int.Parse(Request.QueryString["UserId"]);
+            Response.Redirect("~/View/Home.aspx?UserId=" + id);
         }
     }
 }

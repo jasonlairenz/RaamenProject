@@ -6,11 +6,14 @@
 <head runat="server">
     <title></title>
     <link href="AsetStyle/navbarStyle.css" rel="stylesheet" />
-    <link href="HomeStyle.css" rel="stylesheet" />
+    
+    <link href="AsetStyle/tableStyle.css" rel="stylesheet" />
+    <link href="AsetStyle/contentStyle.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+
             <nav>
                 <div>
                     <h1 class="logo">Raamen</h1>
@@ -31,7 +34,7 @@
                 
                     <% } else if(getUserRole() == 3){ %>
                         <%--staff--%>
-                        <asp:Button CssClass="navBtn" ID="homeBtn" runat="server" Text="Home" />
+                        <asp:Button CssClass="navBtn" ID="homeBtn" runat="server" Text="Home" OnClick="homeBtn_Click1" />
                         <asp:Button CssClass="navBtn" ID="manageRamenBtn2" runat="server" Text="Manage Ramen" OnClick="manageRamenBtn_Click" />
                         <asp:Button CssClass="navBtn" ID="orderQueueBtn2" runat="server" Text="Order Queue" OnClick="orderQueueBtn_Click" />
                     <% } %>
@@ -41,29 +44,33 @@
                     </div>
                 </nav>
 
-            <%if (getUserRole() == 1) { %>
-                <h1>Welcome, Member!</h1>
-                <asp:Label ID="roleLbl" runat="server" Text=""></asp:Label>
-            <% } else if(getUserRole() == 2){ %>
-                <h1>Welcome, Admin!</h1>
+            <div class="content">
 
-                <h1>Member</h1>
-                <asp:GridView ID="GridViewMemberr" runat="server"></asp:GridView>
+                <%if (getUserRole() == 1) { %>
+                    <br />
+                    <h1>Welcome, Member!</h1><br />
+                    <asp:Label ID="roleLbl" runat="server" Text=""></asp:Label><br />
 
-                <h1>Staff</h1>
-                <asp:GridView ID="GridViewStaff" runat="server"></asp:GridView>
+                <% } else if(getUserRole() == 2){ %>
+                    <h1>Welcome, Admin!</h1><br />
 
-             <% } else if(getUserRole() == 3){ %>
-                <h1>Welcome, Staff!</h1>
+                    <h1>Member</h1><br />
+                    <asp:GridView CssClass="gridview" ID="GridViewMemberr" runat="server"></asp:GridView>
 
-                <h1>Member</h1>
-                <asp:GridView ID="GridViewMember" runat="server"></asp:GridView>
-            <% } %>
+                    <h1>Staff</h1><br />
+                    <asp:GridView CssClass="gridview" ID="GridViewStaff" runat="server"></asp:GridView>
+
+                <% } else if(getUserRole() == 3){ %>
+                    <h1>Welcome, Staff!</h1><br />
+
+                    <h1>Member</h1><br />
+                    <asp:GridView CssClass="gridview" ID="GridViewMember" runat="server"></asp:GridView>
+                <% } %>
+                <br />
+            </div>
 
             
-            
-            <h1>Ini Dashboard</h1>
-            <asp:Label ID="infoLbl" runat="server" Text="Label"></asp:Label>
+
         </div>
     </form>
 </body>

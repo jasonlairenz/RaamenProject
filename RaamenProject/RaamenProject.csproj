@@ -1223,11 +1223,11 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="View\AsetStyle\contentStyle.css" />
     <Content Include="View\AsetStyle\navbarStyle.css" />
     <Content Include="View\AsetStyle\tableStyle.css" />
     <Content Include="View\Authentication\LoginStyle.css" />
     <Content Include="View\Authentication\RegisterStyle.css" />
-    <Content Include="View\HomeStyle.css" />
     <Content Include="View\Profile\UpdateProfileStyle.css" />
     <Content Include="View\Profile\ViewProfileStyle.css" />
     <Content Include="View\Ramen\addRamen.aspx" />
