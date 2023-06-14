@@ -30,12 +30,12 @@
 
             <div>
                 <asp:Label ID="Label3" runat="server" Text="Password"></asp:Label><br />
-                <asp:TextBox ID="passTxt" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="passTxt" type="password" runat="server"></asp:TextBox><br />
             </div>
 
             <div>
                 <asp:Label ID="Label5" runat="server" Text="Confirmation Password"></asp:Label><br />
-                <asp:TextBox ID="confirmTxt" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="confirmTxt" type="password" runat="server"></asp:TextBox><br />
             </div>
 
             <asp:Label ID="statusLbl" runat="server" Text=""></asp:Label><br />

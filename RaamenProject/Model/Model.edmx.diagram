@@ -4,21 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="522df6763ffd4623b3f8d0c5bd465297" Name="Diagram1">
-        <EntityTypeShape EntityType="DatabaseModel.Cart" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Detail" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+      <Diagram DiagramId="88e35e1f808d4d7da5ade0ddc4b9ff91" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseModel.Cart" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Detail" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Header" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Meat" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Meat" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Order" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Raman" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Role" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.User" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
-        <AssociationConnector Association="DatabaseModel.FK__Cart__RamenId__05D8E0BE" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Cart__UserId__04E4BC85" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Detail__Ramenid__634EBE90" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Header__Customer__756D6ECB" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Ramen__Meatid__276EDEB3" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__User__Roleid__2A4B4B5E" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DatabaseModel.Raman" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Role" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.User" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseModel.FK__Cart__RamenId__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Cart__UserId__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Detail__Headerid__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Detail__Ramenid__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Header__Customer__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Ramen__Meatid__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__User__Roleid__25869641" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

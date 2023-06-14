@@ -18,7 +18,7 @@
 
             <div>
                 <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label><br />
-                <asp:TextBox ID="passTxt" runat="server"></asp:TextBox><br 
+                <asp:TextBox ID="passTxt" type="password" runat="server"></asp:TextBox><br 
             </div>
 
          <asp:Label ID="statusLbl" runat="server" Text=""></asp:Label><br />
