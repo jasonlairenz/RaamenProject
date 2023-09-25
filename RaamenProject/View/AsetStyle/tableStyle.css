@@ -1,0 +1,27 @@
+﻿.gridview {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom:10px;
+}
+
+    .gridview th, .gridview td {
+        padding: 8px;
+        border: 1px solid #ccc;
+    }
+
+    .gridview th {
+        background-color: cornflowerblue;
+    }
+
+    .gridview tr:nth-child(even) {
+        background-color: aliceblue;
+    }
+
+    .gridview tr:hover {
+        background-color: #eaeaea;
+    }
+
+    .gridview .gridview-emptydatarow {
+        font-style: italic;
+        text-align: center;
+    }

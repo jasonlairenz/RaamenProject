@@ -1,0 +1,39 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    color: white;
+    margin-top:10px;
+    margin-left:30px;
+    font-size: 30px;
+}
+
+nav {
+    background-color: cornflowerblue;
+    text-align: right;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navBtn {
+    background-color: cornflowerblue;
+    margin: 0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.5s;
+    justify-content: end;
+}
+
+    .navBtn:hover {
+        background-color: darkblue;
+    }

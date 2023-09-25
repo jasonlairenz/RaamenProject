@@ -1,0 +1,44 @@
+﻿body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+div label{
+    color:cornflowerblue;
+    font-size:larger;
+}
+
+#updateBtn {
+    background-color: cornflowerblue;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    margin-left: 50px;
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+
+
+#updateBtn:hover {
+    background-color: darkblue;
+}
+

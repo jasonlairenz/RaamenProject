@@ -1,0 +1,50 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    height: 100vh;
+    margin-top: 20px;
+}
+#Label1 {
+    margin-top:10px;
+}
+
+h1, h2 {
+    color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+h2 {
+    text-decoration:underline;
+}
+
+.orderRamenBtn {
+    background-color: cornflowerblue;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-size: small;
+    border-radius: 3px;
+    margin-top: 10px;
+    transition: background-color 0.5s;
+    /*margin-left:10px;*/
+}
+
+.orderRamenBtn:hover {
+    background-color: darkblue;
+}
